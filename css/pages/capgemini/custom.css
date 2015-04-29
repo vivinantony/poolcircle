@@ -1,0 +1,35 @@
+/*! 
+ *   TLT v1.0
+ *   Author: Vivin Antony
+ *   Website: www.thelittletechie.blogspot.com
+*/
+
+/*capgemini*/
+
+.logo-robbon {
+  width: 110px;
+  height: 90px;
+  padding-top: 15px;
+  position: absolute; 
+  top: 0;
+  margin-left: 10px;
+  background: #55d782;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 9999;
+}
+.logo-robbon:after {
+  content: "";
+  position: absolute;
+  top:90px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 15px solid #55d782;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+}

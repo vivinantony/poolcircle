@@ -1,0 +1,9 @@
+/*! 
+ *   TLT v1.0
+ *   Author: Vivin Antony
+ *   Website: www.thelittletechie.blogspot.com
+*/
+
+/* addtrip.jsp */
+@media screen and (max-width: 500px) { .disappear-below-500 { display: none } }
+@media screen and (min-width: 501px) and (max-width: 100000px) { .disappear-above-500 { display: none } }

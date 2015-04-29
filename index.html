@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+  <title>PoolCircle</title>
+  <link rel="icon" type="image/ico" href="img/techie/favicon.ico">
+
+  <!-- Styles -->
+  <link href="css/techie/custom.css" rel="stylesheet">
+  <link href="css/pages/index/custom.css" rel="stylesheet">
+  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap/bootstrap-formhelpers.min.css" rel="stylesheet">  
+  <link href="css/bootstrap/dropdowns-enhancement.css" rel="stylesheet"> 
+  <link href="css/spinner/ladda-themeless.min.css" rel="stylesheet">
+  <style>
+    .carousel-fade .item { -webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s } 
+    .carousel-fade .active.left { left: 0; opacity: 0; z-index: 2 } 
+    .carousel-fade .next { left: 0; opacity: 1; z-index: 1 }
+  </style>
+</head>
+
+<body onload="runslide()">
+<div class='navbar navbar-inverse navbar-static-top' role='navigation' style='background-color: #476172; border-bottom: 3px solid #55d782; border-radius: 0; margin:0;'><!-- navbar -->
+  <div class='container'><!-- container -->
+    <div class='navbar-header'><!-- navbar-header -->
+      <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button' style='background-color: #476172'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='index.html'><img src="img/techie/logo-icon.png" alt="PoolCircle Logo" style="width: 40px; margin-top: 15px"></a>
+    </div><!-- /navbar-header -->
+    <div class='collapse navbar-collapse' style='background-color: #476172'><!-- collapse -->
+      <div class="appear" style="padding: 5px 0"></div>
+      <ul class='nav navbar-nav navbar-right'>
+        <li><a href='about.html' style="color: #fff"><i class="fa fa-user"></i> About</a></li>
+        <li><a href='faq.html' style="color: #fff"><i class="fa fa-question-circle"></i> FAQ</a></li>
+        <li><a href='#' style="color: #fff"><i class="fa fa-wordpress"></i> Blog</a></li>
+        <li><a href='contact.html' style="color: #fff"><i class="fa fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div><!-- /collapse -->
+  </div><!-- /container -->
+</div><!-- /navbar -->
+
+<div class="carousel slide carousel-fade">
+  <div class="carousel-inner"><!-- carousel-inner -->
+    <div class="item active"><!-- item -->
+        <div class="fill" style="background-image:url('img/slider/slider1.jpg');"></div>
+    </div><!-- /item -->
+    <div class="item"><!-- item -->
+        <div class="fill" style="background-image:url('img/slider/slider2.jpg');"></div>
+    </div><!-- /item -->
+    <div class="item"><!-- item -->
+        <div class="fill" style="background-image:url('img/slider/slider3.jpg');"></div>
+    </div><!-- /item -->
+  </div><!-- /carousel-inner -->
+</div>
+
+<div class="banner-wrapper"><!-- banner-wrapper -->
+  <div class="container"><!-- container -->
+    <div class="row"><!-- row -->
+      <div class="col-lg-12 max-700-center"><!-- col-lg-12 -->
+        <div class="btn-group pull-right" style="display: block"><!-- btn-group -->
+          <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".registerModal"><i class="fa fa-plus-circle"></i> Register</button>
+          <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target=".loginModal">Login <i class="fa fa-sign-in"></i></button>
+        </div><!-- /btn-group -->
+        <div class="btn-group pull-right" style="display: none"><!-- btn-group -->
+          <table>
+            <tr>
+              <td><em>Login back</em>&nbsp;&nbsp;</td>
+              <td><a href="" class="btn btn-info btn-md"><i class="fa fa-dashboard"></i> Dashboard</a></td>
+            </tr>
+          </table>
+        </div><!-- /btn-group -->
+      </div><!-- /col-lg-12 -->
+    </div><!-- /row -->
+    <div class="row" style="padding-top: 20px"><!-- row -->
+      <div class="col-lg-1 col-md-1"><!-- col-lg-1 -->
+      </div><!-- /col-lg-1 -->
+      <div class="col-lg-6 col-md-6"><!-- col-lg-6 -->
+        <p class="banner-description max-767-center"><img src="img/techie/logo.png" alt="PoolCircle Logo"><br>A Carpool network that lets you share rides with others you can trust.</p>
+      </div><!-- /col-lg-6 -->
+      <div class="col-lg-5 col-md-5"><!-- col-lg-6 -->
+        <div class="banner-bottom-box"><!-- banner-bottom-box -->
+        <div class="col-md-12" style="color: #fff; margin: 0 0 10px 0">Where do you want to go</div>
+        <div class="row"><!-- row -->
+          <div class="col-md-12"><!-- col-md-12 -->
+            <div class="input-group margin-bottom-sm"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-map-marker fa-lg color-darkgreen"></i></span>
+              <input class="form-control" type="text" placeholder="From">
+            </div><!-- /input-group -->
+          </div><!-- /col-md-12 -->
+        </div><!-- /row -->
+        <div class="row"><!-- row -->
+          <div class="col-md-12"><!-- col-md-12 -->
+            <div class="input-group margin-bottom-sm"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-map-marker fa-lg color-darkred"></i></span>
+              <input class="form-control" type="text" placeholder="To">
+            </div><!-- /input-group -->        
+          </div><!-- /col-md-12 -->
+        </div><!-- /row -->
+        <div class="row"><!-- row -->
+          <div class="col-md-12"><!-- col-md-12 -->
+            <button class="btn btn-info btn-block ladda-button loading-spin" data-style="zoom-in"><span class="ladda-label"><i class="fa fa-search"></i> Find Carpool</span></button>    
+          </div><!-- /col-md-12 -->
+        </div><!-- /row -->
+      </div><!-- /banner-bottom-box --> 
+      </div><!-- /col-lg-6 -->
+    </div><!-- /row -->
+    <div class="row" style="padding-top: 20px"><!-- row -->
+      <div class="col-lg-1 col-md-1"><!-- col-lg-1 -->
+      </div><!-- /col-lg-1 -->
+      <div class="col-lg-6 col-md-6"><!-- col-lg-6 -->
+      </div><!-- /col-lg-6 -->
+      <div class="col-lg-5 col-md-5 text-center"><!-- col-lg-5 -->
+         <div class="btn-group app-buttons"><!-- btn-group -->
+          <a href="http://play.google.com/store/apps/details?id=com.poolcircle" target="_blank"><img src="img/button/googleplay.png"></a>
+          <a href="http://itunes.apple.com/in/app/poolcircle/id763372738?ls=1&mt=8" target="_blank"><img src="img/button/appstore.png"></a>
+        </div><!-- /btn-group -->
+      </div><!-- /col-lg-5 -->
+    </div><!-- /row -->
+     <div class="row text-center disappear"><!-- row -->      
+        <i class="fa fa-angle-double-down fa-3x scroll-down-icon" style="bottom: 49px"></i>     
+        <i class="fa fa-angle-double-down fa-3x scroll-down-icon"></i>     
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div><!-- /banner-wrapper -->
+
+<div class="container-fluid theme-2"><!-- container-fluid -->
+  <div class="row theme-2-disappear"><!-- row -->
+    <div class="main-heading ">Safety</div>
+  </div><!-- /row -->
+  <div class="padding-sm"></div>
+  <div class="container"><!-- container -->
+     <div class="row"><!-- row -->
+      <div class="col-md-12"><!-- col-md-12 -->
+        <h2 class="text-center color-white">Solving the safety concerns in carpooling</h2>
+      </div><!-- /col-md-12 -->
+    </div><!-- /row -->
+    <div class="row"><!-- row -->
+      <div class="col-md-5 col-sm-6 col-xs-6"><!-- col-md-5 -->
+        <div onclick="loadslide(2)" class="float-right margin-bottom-md" style="cursor: pointer"><!-- div -->
+            <img class="img-small-circle-ring" id="slide2sel" src="img/pages/index/theme-2-2-ring.png" style="position:absolute; display: none" />
+            <img class="img-small-circle" src="img/pages/index/theme-2-2.png" style="position:relative; top: 9px; left: 9px; cursor: pointer" />
+        </div><!-- /div -->
+      </div><!-- /col-md-5 -->
+      <div class="col-md-2 col-sm-6 col-xs-6"></div>
+      <div class="col-md-5 col-sm-6 col-xs-6"><!-- col-md-5 -->
+        <div class="margin-bottom-md" onclick="loadslide(3)" style="cursor: pointer"><!-- div -->
+          <img class="img-small-circle-ring" id="slide3sel" src="img/pages/index/theme-2-3-ring.png" style="position:absolute; display: none" />
+          <img class="img-small-circle" src="img/pages/index/theme-2-3.png" style="position:relative; top: 9px; left: 9px; cursor: pointer" />
+        </div><!-- /div -->
+      </div><!-- /col-md-5 -->
+    </div><!-- /row -->
+    <div class="row"><!-- row -->
+      <div class="col-md-6 col-sm-6 col-xs-6"><!-- col-md-6 -->
+        <div class="margin-bottom-md" onclick="loadslide(1)" style="cursor: pointer"><!-- div -->
+          <img class="img-small-circle-ring" id="slide1sel" src="img/pages/index/theme-2-1-ring.png" style="position: absolute" />
+          <img class="img-small-circle" src="img/pages/index/theme-2-1.png" style="position: relative; top: 9px; left: 9px; cursor: pointer" />
+        </div><!-- /div -->
+      </div><!-- /col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-6"><!-- col-md-6 -->
+        <div onclick="loadslide(4)" class="float-right margin-bottom-md" style="cursor: pointer"><!-- div -->
+          <img class="img-small-circle-ring" id="slide4sel" src="img/pages/index/theme-2-4-ring.png" style="position:absolute; display: none" />
+          <img class="img-small-circle" src="img/pages/index/theme-2-4.png" style="position:relative; top: 9px; left: 9px; cursor: pointer" />
+        </div><!-- /div -->
+      </div><!-- /col-md-6 -->
+    </div><!-- /row -->
+
+    <div class="padding-md"></div>
+
+    <div class="row"><!-- row -->
+      <div class="col-md-12"><!-- col-md-12 -->
+        <div class="bigsemicircle"><!--bigsemicircle-->
+          <div class="semicircle1" id="slide1"><!-- semicircle1 -->
+            <div class="semicirclealign"><!-- semicirclealign -->
+                <img src="img/pages/index/theme-2-1-icon.png" />
+                <div class="padding-md"></div>
+                <p>Choose which network of connections you want to carpool with</p>
+            </div><!-- /semicirclealign -->
+          </div><!-- /semicircle1 -->
+          <div class="semicircle2" id="slide2" style="display: none"><!-- semicircle2 -->
+            <div class="semicirclealign"><!-- semicirclealign -->
+                <img src="img/pages/index/theme-2-2-icon.png" />
+                <div class="padding-md"></div>
+                <p>Invite your friends and connections at the click of a button</p>
+            </div><!-- /semicirclealign -->
+          </div><!-- /semicircle2 -->
+          <div class="semicircle3" id="slide3" style="display: none"><!-- semicircle3 -->
+            <div class="semicirclealign"><!-- semicirclealign -->
+                <img src="img/pages/index/theme-2-3-icon.png" />
+                <div class="padding-md"></div>
+                <p>User rating keeps the platform safe & great folks get more rides</p>
+            </div><!-- /semicirclealign -->
+          </div><!-- /semicircle3 -->
+          <div class="semicircle4" id="slide4" style="display: none"><!-- semicircle4 -->
+            <div class="semicirclealign"><!-- semicirclealign -->
+              <div style="margin: 41px 0 0 0;"><!-- div -->
+                  <img src="img/pages/index/theme-2-4-icon.png" />
+                  <div class="padding-md"></div>
+                  <p>Integrates with your social network to find more carpools</p>
+              </div><!-- /div -->
+            </div><!-- /semicirclealign -->
+          </div><!-- /semicircle4 -->
+        </div><!--/bigsemicircle-->        
+      </div><!-- /col-md-12 -->
+    </div><!-- /row -->     
+
+    <div class="padding-md"></div>
+    <div class="row text-center"><!-- row -->
+      <a href="/safety" class="btn btn-safety btn-md">Read more</a>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div><!-- /container-fluid -->
+
+<div class="container-fluid theme-1"><!-- container-fluid -->
+  <div class="row theme-1-disappear"><!-- row -->
+    <div class="main-heading ">Carpool</div>
+  </div><!-- /row -->
+  <div class="padding-sm"></div>
+  <div class="container"><!-- container -->
+    <div class="row"><!-- row -->
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5"><!-- col-lg-2 -->
+        <img src="img/pages/index/theme-1-1.png" class="img-responsive">
+      </div><!-- /col-lg-2 -->
+      <div class="col-lg-10 col-md-9 col-sm-9 col-xs-7"><!-- col-lg-10 -->
+        <h4 class="heading">Dont drive Alone</h4>
+        <p class="description">Carpool with colleagues and friends going your way and beat the stress</p>
+      </div><!-- /col-lg-10 -->
+    </div><!-- /row -->
+    <div class="row"><!-- row -->
+      <img src="img/pages/index/theme-1-4.png" class="img-responsive center-block">
+    </div><!-- /row -->
+    <div class="row"><!-- row -->
+      <div class="col-lg-10 col-md-9 col-sm-9 col-xs-7 text-right"><!-- col-lg-10 -->
+        <h4 class="heading">Save the Planet</h4>
+        <p class="description">Help reduce pollution & traffic on the road. Every shared ride helps</p>
+      </div><!-- /col-lg-10 -->
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5"><!-- col-lg-2 -->
+        <img src="img/pages/index/theme-1-2.png" class="img-responsive">
+      </div><!-- /col-lg-2 -->
+    </div><!-- /row -->
+    <div class="row"><!-- row -->
+      <img src="img/pages/index/theme-1-5.png" class="img-responsive center-block">
+    </div><!-- /row -->
+     <div class="row"><!-- row -->
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5"><!-- col-lg-2 -->
+        <img src="img/pages/index/theme-1-3.png" class="img-responsive">
+      </div><!-- /col-lg-2 -->
+      <div class="col-lg-10 col-md-9 col-sm-9 col-xs-7"><!-- col-lg-10 -->
+        <h4 class="heading">Save Fuel Cost</h4>
+        <p class="description">You cannot control fuel prices, but you can control how much you use it</p>
+      </div><!-- /col-lg-10 -->
+    </div><!-- /row -->
+    <div class="padding-sm"></div>
+    <div class="row text-center"><!-- row -->
+      <a href="/carpool" class="btn btn-carpool btn-md">Read more</a>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div><!-- /container-fluid -->
+
+<div class="container-fluid theme-3"><!-- container-fluid -->
+  <div class="row theme-3-disappear"><!-- row -->
+    <div class="main-heading ">Intercity</div>
+  </div><!-- /row -->
+  <div class="padding-sm"></div>
+  <div class="container"><!-- container -->
+    <div class="row"><!-- row -->
+      <div class="col-md-9"><!-- col-md-9 -->
+        <img src="img/pages/index/theme-3.png" class="img-responsive">
+        <div class="padding-md"></div>
+        <table class="circle margin-bottom-lg">
+          <tr>
+            <td><div class="circle1">1</div></td>
+            <td>Anoop is driving from Bangalore to Chennai. He is looking for others to ride-share with</td>
+          </tr>
+          <tr>
+            <td class="padding-sm"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><div class="circle2">2</div></td>
+            <td>Meahwhile Sneha, Nishanth and Rehka are planning the same trip. They find Anoop on PoolCircle</td>
+          </tr>
+          <tr>
+            <td class="padding-sm"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><div class="circle3">3</div></td>
+            <td>They share the ride and a great rapport to go!</td>
+          </tr>
+          <tr>
+            <td class="padding-sm"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><div class="circle4">4</div></td>
+            <td>They share the fuel cost and find friends for life</td>
+          </tr>
+        </table>
+      </div><!-- /col-md-9 -->
+      <div class="col-md-3"><!-- col-md-3 -->
+        <div id="chevron"><!-- chevron -->
+          <h4 style="margin-bottom: 0">SAVING CALCULATOR</h4>
+          <span class="description">(Eg. Bangalore - Chennai 350 km)</span>
+          <h5>On PoolCircle</h5>
+          <span>Fuel & running cost @ Rs.12 / km with 4 awesome folks in the car</span>
+          <div class="cost">Rs. 2400</div>
+          <div class="cost margin-bottom-lg">Rs.600 / head</div>
+          <h5>On Train / Bus</h5>
+          <span>Ticket @ Rs.700/- plus station commute of Rs. 300/-</span>
+          <div class="cost">Rs.1000</div>
+          <div class="cost-save">You Save - Rs. 400</div>
+        </div><!-- chevron -->
+      </div><!-- /col-md-3 --> 
+    </div><!-- /row -->
+    
+    <div class="padding-sm"></div>
+    <div class="row text-center"><!-- row -->
+      <a href="/intercity" class="btn btn-intercity btn-md">Read more</a>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div><!-- /container-fluid -->
+
+<div class="container-fluid featured-on" style="background: #eee"><!-- container-fluid -->
+  <div class="row theme-4-disappear"><!-- row -->
+    <div class="main-heading ">Featured on</div>
+  </div><!-- /row -->
+  <div class="padding-sm"></div>
+  <div class="container"><!-- container -->
+    <div class="row"><!-- row -->
+      <div class="col-md-2 col-sm-2 col-xs-6 margin-bottom-md"><!-- col-md-2 -->
+        <a href="http://yourstory.com/2014/07/poolcircle-ridesharing/" target="_blank"><img src="img/pages/index/feature1.png" class="img-responsive"></a>
+      </div><!-- /col-md-2 -->   
+      <div class="col-md-2 col-sm-2 col-xs-6 margin-bottom-md"><!-- col-md-2 -->
+        <a href="http://www.nextbigwhat.com/poolcircle-ride-sharing-297/" target="_blank"><img src="img/pages/index/feature2.png" class="img-responsive"></a>
+      </div><!-- /col-md-2 -->   
+      <div class="col-md-2 col-sm-2 col-xs-6 margin-bottom-md"><!-- col-md-2 -->
+        <a href="http://www.tnooz.com/article/startup-pitch-poolcircle-carpool-service/" target="_blank"><img src="img/pages/index/feature3.png" class="img-responsive"></a>
+      </div><!-- /col-md-2 --> 
+      <div class="col-md-2 col-sm-2 col-xs-6 margin-bottom-md"><!-- col-md-2 -->
+        <a href="http://articles.economictimes.indiatimes.com/2013-12-27/news/45626748_1_startups-carpooling-user-base" target="_blank"><img src="img/pages/index/feature4.png" class="img-responsive"></a>
+      </div><!-- /col-md-2 --> 
+      <div class="col-md-2 col-sm-2 col-xs-6 margin-bottom-md"><!-- col-md-2 -->
+        <a href="http://www.iamwire.com/2013/11/poolcircle-carpooling-startup-enterprises-money-perform-csr/22049" target="_blank"><img src="img/pages/index/feature5.png" class="img-responsive"></a>
+      </div><!-- /col-md-2 --> 
+      <div class="col-md-2 col-sm-2 col-xs-6 margin-bottom-md"><!-- col-md-2 -->
+        <a href="http://www.bangaloremirror.com/bangalore/others/Carpooling-app-aims-to-get-7000-vehicles-off-city-roads/articleshow/24161370.cms" target="_blank"><img src="img/pages/index/feature6.png" class="img-responsive"></a>
+      </div><!-- /col-md-2 --> 
+    </div><!-- /row -->
+    <div class="padding-sm"></div>
+  </div><!-- /container -->
+</div><!-- /container-fluid -->
+
+<i class="fa fa-chevron-circle-up fa-2x scrollup tooltiptop" data-toggle="tooltip" title="Scroll to top"></i>
+
+<footer>
+  <div class="container"><!-- container -->
+    <div class="row"><!-- row -->
+      <div class="col-lg-9 col-md-9 col-sm-7"><!-- col-md-9 -->
+        <table style="width: auto; margin: 8px auto">
+          <tr>
+            <td style="color: #eee"><i class="fa fa-copyright"></i> PoolCircle 2014</td>
+            <td><a href='tou.html'>Terms of Use</a></td>
+            <td><a href='privacy.html'>Privacy Policy</a></td>
+          </tr>
+        </table>
+      </div><!-- /col-md-9 -->
+      <div class="col-lg-3 col-md-3 col-sm-5"><!-- col-md-3 -->
+        <div class="appear" style="padding: 5px 0"></div>
+        <a href="#" target="_blank">
+          <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Facebook">
+            <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+            <i class="fa fa-facebook fa-stack-1x color-famblue"></i>
+          </span>
+        </a>
+        <a href="#" target="_blank">
+          <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Twitter">
+            <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+            <i class="fa fa-twitter fa-stack-1x color-famblue"></i>
+          </span>
+        </a>
+        <a href="#" target="_blank">
+          <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Linkedin">
+            <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+            <i class="fa fa-linkedin fa-stack-1x color-famblue"></i>
+          </span>
+        </a>
+      </div><!-- /col-md-3 -->
+    </div><!-- /row -->
+  </div><!-- /container -->
+</footer>
+
+<!-- .......................modal for registration....................... -->
+<div class="modal fade registerModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"><!-- modal -->
+  <div class="modal-dialog"><!-- modal-dialog -->
+    <div class="modal-content"><!-- modal-content -->
+      <div class="modal-header"><!-- modal-header -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Register Now</h4>
+      </div><!-- /modal-header -->
+      <div class="modal-body"><!-- modal-body -->
+        <div class="row"><!-- row -->
+          <p class="text-center" style="margin-bottom: 40px">Just a few basic information about you, and we are ready to go</p>
+          <div style="width: 80%; margin:0 auto"><!-- div1 -->
+            <div class="margin-bottom-sm"><!-- margin-bottom-sm -->
+              <select id="countries_phone" class="form-control bfh-countries" data-country="IN" data-flags="true"></select>
+            </div><!-- /margin-bottom-sm -->
+            <div class="input-group margin-bottom-sm"><!-- input-group -->                
+              <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>                
+              <input type="text" id="inputPhone" class="form-control bfh-phone" data-country="countries_phone">
+            </div><!-- /input-group -->
+            <span class="help-block"><small>This will be your login id</samll></span>
+            <div class="input-group margin-bottom-sm"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+              <input class="form-control" type="password" placeholder="Password">
+            </div><!-- /input-group -->
+            <div class="input-group margin-bottom-sm"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+              <input class="form-control" type="text" placeholder="First Name">
+              <span class="input-group-btn" style="width:0"></span>
+              <input class="form-control" type="text" placeholder="Last Name">
+            </div><!-- /input-group -->
+            <div class="btn-group" data-toggle="buttons"><!-- div1 -->
+              <label class="btn btn-default active" style="margin-bottom: 5px">
+                <input type="radio" name="gender" checked> <i class="fa fa-male fa-fw"></i> Male
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="gender"><i class="fa fa-female fa-fw"></i> Female
+              </label>
+            </div><!-- /div1 -->
+            <button class="btn btn-primary btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-plus-circle"></i> Register</span></button>
+            <div style="padding:10px"></div>          
+          </div><!-- /div1 -->
+          <p class="text-center">By using PoolCircle, you agree to our <a href="/termsofuse">Terms of Service</a> and <a href="/privacy">Privacy Policy</a></p>
+        </div><!-- /row -->
+      </div><!-- /modal-body -->      
+    </div><!-- /modal-content -->
+  </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- ......................./modal for registration....................... -->
+
+<!-- .......................modal for login....................... -->
+<div class="modal fade loginModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"><!-- modal -->
+  <div class="modal-dialog"><!-- modal-dialog -->
+    <div class="modal-content"><!-- modal-content -->
+      <div class="modal-header"><!-- modal-header -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Login Now</h4>
+      </div><!-- /modal-header -->
+      <div class="modal-body"><!-- modal-body -->
+        <div class="row text-center"><!-- text-center -->
+          <a class="btn btn-social btn-facebook" style="margin-bottom: 5px">
+            <i class="fa fa-facebook"></i> Login with Facebook
+          </a>
+          <a class="btn btn-social btn-google-plus" style="margin-bottom: 5px">
+            <i class="fa fa-google-plus"></i> Login with Google
+          </a>
+        </div><!-- /text-center -->
+
+        <div class="hr-line" style="margin: 50px 0"><span>or</span></div>
+
+        <div class="row"><!-- row -->
+          <div style="width:80%; margin:0 auto"><!-- div1 -->
+            <div class="input-group"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+              <input class="form-control" type="email" name="email" placeholder="Email address">
+            </div><!-- /input-group -->
+            <div style="padding:2px"></div>
+            <div class="input-group"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+              <input class="form-control" type="password" name="password" placeholder="Password">
+            </div><!-- /input-group -->
+            <div style="padding:2px"></div>
+            <button class="btn btn-success btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-sign-in"></i> Login</span></button>
+            <div style="padding:10px"></div>
+          </div><!-- /div1 -->
+          <p class="text-center"><a href="#" data-toggle="modal" data-target=".forgotPasswordModal">Forgot Password?</a></p>
+        </div><!-- /row -->
+      </div><!-- /modal-body -->
+    </div><!-- /modal-content -->
+  </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- ......................./modal for login....................... -->
+
+<!-- .......................modal for reset password....................... -->
+<div class="modal fade forgotPasswordModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+  <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+    <div class="modal-content"><!-- modal-content -->
+      <div class="modal-header"><!-- modal-header -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Reset Password</h4>
+      </div><!-- /modal-header -->
+      <div class="modal-body"><!-- modal-body -->
+        <div class="row"><!-- row -->
+          <div style="width:80%; margin:0 auto"><!-- div1 -->
+            <div class="input-group margin-bottom-sm"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+              <input class="form-control" type="email" placeholder="Email address">
+            </div><!-- /input-group -->
+            <button class="btn btn-success btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-undo"></i> Reset Password</span></button>
+            <div style="padding:10px"></div>
+          </div><!-- /div1 -->
+        </div><!-- /row -->
+      </div><!-- /modal-body -->
+    </div><!-- /modal-content -->
+  </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- ......................./modal for reset password....................... -->
+
+<!-- .......................modal for phone confirmation....................... -->
+<div class="modal fade mobileVerifyModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+  <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+    <div class="modal-content"><!-- modal-content -->
+      <div class="modal-header"><!-- modal-header -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Phone Confirmation</h4>
+      </div><!-- /modal-header -->
+      <div class="modal-body"><!-- modal-body -->
+        <div class="row"><!-- row -->
+          <div style="width:80%; margin:0 auto"><!-- div1 -->
+            <p>Please enter the PIN that has been sent to <strong>9916501921</strong></p>
+            <div class="input-group margin-bottom-sm"><!-- input-group -->
+              <span class="input-group-addon"><i class="fa fa-ticket fa-fw"></i></span>
+              <input class="form-control" type="text" placeholder="PIN">
+              <span class="input-group-btn">
+                <button class="btn btn-primary btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"> Verify</span></button>
+              </span>
+            </div><!-- /input-group -->
+            <div style="padding:10px"></div>
+          </div><!-- /div1 -->
+          <p class="text-center"><a href="#">Resend PIN</a></p>
+        </div><!-- /row -->
+      </div><!-- /modal-body -->
+    </div><!-- /modal-content -->
+  </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- ......................./modal for phone confirmation....................... -->
+
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap/bootstrap-formhelpers.js" type="text/javascript"></script>
+  <script src="js/pages/index/custom.js" type="text/javascript"></script>
+  <script src="js/techie/custom.js" type="text/javascript"></script>
+  <!-- button loading spinner -->
+  <script src="js/spinner/spin.min.js"></script>
+  <script src="js/spinner/ladda.min.js"></script>
+</body>
+</html>

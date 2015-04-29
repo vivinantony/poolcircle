@@ -1,0 +1,16 @@
+/*! 
+ *   TLT v1.0
+ *   Author: Vivin Antony
+ *   Website: www.thelittletechie.blogspot.com
+*/
+
+/* intercity.jsp */
+.header-bg { background-color: #c3c11d }
+.intercity-page { margin-bottom: 20px }
+.intercity-page h4 { color: #c3c11d }
+.intercity-page p { font-size: 16px; color:#000; text-indent: 20px }
+.intercity-page .inner-side-box { padding: 10px; margin-bottom: 20px; background-color: #f0efac }
+.icon-color { color: #c3c11d }
+.box.box-intercity { border-top-color: #c3c11d; padding: 10px}
+.box.box-intercity { min-height: 205px }
+.box.box-intercity p { font-size: 15px }

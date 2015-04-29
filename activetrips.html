@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>PoolCircle</title>
+    <link rel="icon" type="image/ico" href="img/techie/favicon.ico">
+
+    <!-- Styles -->
+    <link href="css/techie/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/pages/activetrips/custom.css" rel="stylesheet" type="text/css">    
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" >
+    <link href="css/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="css/spinner/ladda-themeless.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animation/animate.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="container"><!-- container -->
+        <a class='navbar-brand' href='index.html'><img src="img/techie/logo-icon.png" alt="PoolCircle Logo" style="width: 40px; margin-top: 15px"></a>
+        <div class="navbar-right"><!-- navbar-right -->
+          <ul class="nav navbar-nav">
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i>
+                <span>Vivin Antony <i class="caret"></i></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- user image -->
+                <li class="user-header">
+                  <img src="img/techie/avatar1.png" class="img-circle" alt="User Image" />
+                  <p>
+                    Vivin Antony
+                    <small>thelittletechie@gmail.com</small>
+                  </p>
+                </li>
+                <!-- user body -->
+                <li class="user-body">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Connect</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Invite</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Rate</a>
+                  </div>
+                </li>
+                <!-- user footer -->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="profile.html" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">Logout <i class="fa fa-sign-out"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /navbar-right -->
+      </div><!-- /container -->
+    </nav>
+  </header>
+
+  <div class="container-fluid map-bg webpage"><!-- container-fluid -->
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-md-12"><!-- col-md-12 -->
+          <div style="padding: 20px 0"><!-- div1 -->
+          </div><!-- /div1 -->
+        </div><!-- /col-md-12 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-md-3 menu-box" style="padding: 0"><!-- col-md-3 menu-box -->
+          <nav class="navbar navbar-invert" role="navigation">
+            <div class="navbar-header"><!-- navbar-header -->
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border: 1px solid grey">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars fa-lg"></i>
+              </button>
+              <span class="navbar-brand color-famgreen" style="font-size: 20px"><i class="fa fa-ellipsis-v"></i> Menu</span>
+            </div><!-- /navbar-header -->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="max-height: none"><!-- navbar-collapse -->
+              <ul class="nav nav-pills nav-stacked menu-page">
+                <li class="disappear" style="margin: 30px 0 0 0"></li>
+                <li class="menu_carpool"><a href="activetrips.html"><i class="fa fa-car fa-fw"></i> Carpool</a></li>
+                <li class="menu_schedules"><a href="schedules.html"><i class="fa fa-clock-o fa-fw"></i> Schedules</a></li>
+                <li class="menu_community"><a href="community.html"><i class="fa fa-group fa-fw"></i> Community</a></li>
+                <li class="menu_profile"><a href="profile.html"><i class="fa fa-user fa-fw"></i> Profile</a></li>
+                <li class="menu_marketplace" id="menu-accordion"><a data-toggle="collapse" data-parent="#menu-accordion" href="#sub-menu-1"><i class="fa fa-building fa-fw"></i> Marketplace <span class="caret"></span></a></li>
+              </ul>
+              <div id="sub-menu-1" class="panel-collapse collapse" style="background-color: rgba(36,36,36,0.6);"><!-- collapseOne -->
+                <ul class="nav nav-pills nav-stacked menu-page">
+                  <li class="menu_reva"><a href="reva.html"><i class="fa fa-dot-circle-o fa-fw"></i> Mahindra Reva</a></li>
+                </ul>
+              </div><!-- /collapseOne -->
+            </div><!-- /navbar-collapse -->
+          </nav>
+        </div><!-- /col-md-3 /menu-box -->
+
+        <div class="col-md-9 main-box"><!-- col-md-9 main-box -->
+          <div class="row"><!-- row -->
+            <div class="col-md-10 col-sm-10"><!-- col-md-10 -->
+              <h2>ACTIVE TRIPS <i class="fa fa-question-circle color-success tooltiptop" data-toggle="tooltip" title="List of upcoming trips that you have set up. PoolCircle will find available carpools for these trips."></i></h2>
+              <p>Trips that you have offered or requested to join in</p>                                     
+            </div><!-- /col-md-10 -->
+            <div class="col-md-2 col-sm-2"><!-- col-md-2 -->
+              <a class="btn btn-famblue" href="addtrip.html" style="margin-top: 10px"><i class="fa fa-plus-circle fa-lg color-famgreen"></i> Add Trip</a>
+            </div><!-- /col-md-2 -->
+          </div><!-- /row -->
+
+          <div class="row"><!-- row -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <hr class="hr-header-line" />
+            </div><!-- /col-md-12 -->
+          </div><!-- /row -->
+
+          <div class="row inner-box box box-primary animation"><!-- row inner-box -->
+            <div class="box-header"><!-- box-header -->
+              <span class="box-title">
+                <div class="row"><!-- row -->
+                  <div class="col-md-6 col-sm-6 col-xs-6 r-c1"><!-- r-c1 -->
+                    Looking for Carpool
+                  </div><!-- /r-c1 -->
+                  <div class="col-md-6 col-sm-6 col-xs-6 r-c2"><!-- r-c2 -->
+                    <span>Today</span><br>
+                    <span style="font-size: 20px">1.25 PM</span>
+                  </div><!-- /r-c2 -->
+                </div><!-- /row -->
+              </span>
+              <div class="box-tools pull-right"><!-- box-tools -->
+                <a href="activetripsmatching.html" class="btn btn-success btn-sm"><i class="fa fa-eye fa-lg"></i> 2 Matches Available</a>
+                <span class="tooltiptop" data-toggle="tooltip" title="Edit trip" style="padding-top: 8px">
+                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target=".editTripModal"><i class="fa fa-pencil-square-o fa-lg"></i></button>
+                </span>
+                <button class="btn btn-primary btn-sm tooltiptop" data-toggle="tooltip" title="Delete trip" data-widget="remove"><i class="fa fa-trash fa-lg"></i></button>
+              </div><!-- /box-tools -->
+            </div><!-- /box-header -->
+            <div class="box-body padding-left-md"><!-- box-body -->
+              <div class="row" style="padding-bottom: 5px"><!-- row -->
+                <div class="col-md-12"><!-- col-md-12 -->
+                  <i class="fa fa-map-marker fa-lg color-darkgreen"></i> <span>Marathahalli-Sarjapur Outer Ring Road, Chandra Layout, Bangalore, Karnataka, India</span>
+                </div><!-- /col-md-12 -->
+              </div><!-- /row -->
+              <div class="row"><!-- row -->
+                <div class="col-md-12"><!-- col-md-12 -->
+                  <i class="fa fa-map-marker fa-lg color-darkred"></i> <span>Malleswaram 18th Cross Bus Station, 18th Cross Road, Malleshwara, Bangalore, Karnataka, India</span>
+                </div><!-- /col-md-12 -->
+              </div><!-- /row -->
+            </div><!-- /box-body -->         
+          </div><!-- /row /inner-box -->
+
+          <div class="row inner-box box box-primary animation"><!-- row inner-box -->
+            <div class="box-header"><!-- box-header -->
+              <span class="box-title">
+                <div class="row"><!-- row -->
+                  <div class="col-md-4 col-sm-4 col-xs-12 r-c1"><!-- r-c1 -->
+                    Offering Carpool
+                  </div><!-- /r-c1 -->
+                  <div class="col-md-4 col-sm-4 col-xs-6 r-c2"><!-- r-c2 -->
+                    <span>Wed, Nov 5th</span><br>
+                    <span style="font-size: 20px">5.65 PM</span>
+                  </div><!-- /r-c2 -->
+                  <div class="col-md-4 col-sm-4 col-xs-6 r-c3"><!-- r-c3 -->
+                    <span><i class="fa fa-inr"></i> <span style="font-size: 20px">6</span> / Km</span><br>
+                    <span>Fuel Share</span>
+                  </div><!-- /r-c3 -->
+                </div><!-- /row -->
+              </span>
+              <div class="box-tools pull-right"><!-- box-tools -->
+                <a href="activetripsmatching.html" class="btn btn-success btn-sm"><i class="fa fa-eye fa-lg"></i> 2 Matches Available</a>
+                <span class="tooltiptop" data-toggle="tooltip" title="Edit trip" style="padding-top: 8px">
+                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target=".editTripModal"><i class="fa fa-pencil-square-o fa-lg"></i></button>
+                </span>
+                <button class="btn btn-primary btn-sm tooltiptop" data-toggle="tooltip" title="Delete trip" data-widget="remove"><i class="fa fa-trash fa-lg"></i></button>
+              </div><!-- /box-tools -->
+            </div><!-- /box-header -->
+            <div class="box-body padding-left-md"><!-- box-body -->
+              <div class="row" style="padding-bottom: 5px"><!-- row -->
+                <div class="col-md-12"><!-- col-md-12 -->
+                  <i class="fa fa-map-marker fa-lg color-darkgreen"></i> <span>Marathahalli-Sarjapur Outer Ring Road, Chandra Layout, Bangalore, Karnataka, India</span>
+                </div><!-- /col-md-12 -->
+              </div><!-- /row -->
+              <div class="row"><!-- row -->
+                <div class="col-md-12"><!-- col-md-12 -->
+                  <i class="fa fa-map-marker fa-lg color-darkred"></i> <span>Malleswaram 18th Cross Bus Station, 18th Cross Road, Malleshwara, Bangalore, Karnataka, India</span>
+                </div><!-- /col-md-12 -->
+              </div><!-- /row -->
+            </div><!-- /box-body -->         
+          </div><!-- /row /inner-box -->
+
+        </div><!-- /col-md-9 /main-box -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div><!-- /container-fluid -->
+
+  <i class="fa fa-chevron-circle-up fa-2x scrollup tooltiptop" data-toggle="tooltip" title="Scroll to top"></i>
+
+  <footer>
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-lg-9 col-md-9 col-sm-7"><!-- col-md-9 -->
+          <table style="width: auto; margin: 8px auto">
+            <tr>
+              <td style="color: #eee"><i class="fa fa-copyright"></i> PoolCircle 2015</td>
+            </tr>
+          </table>
+        </div><!-- /col-md-9 -->
+        <div class="col-lg-3 col-md-3 col-sm-5"><!-- col-md-3 -->
+          <div class="appear" style="padding: 5px 0"></div>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Facebook">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-facebook fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Twitter">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-twitter fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Linkedin">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-linkedin fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+        </div><!-- /col-md-3 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </footer>
+
+  <!-- .......................modal for edit trip....................... -->
+  <div class="modal fade editTripModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+    <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+      <div class="modal-content"><!-- modal-content -->
+        <div class="modal-header"><!-- modal-header -->
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Edit Trip</h4>
+        </div><!-- /modal-header -->
+        <div class="modal-body"><!-- modal-body -->
+          <div class="row"><!-- row -->
+            <div style="width:80%; margin:0 auto"><!-- div1 -->
+              <div class="input-group margin-bottom-sm"><!-- input group -->
+                <div class="input-group-addon"><!-- input-group-addon -->
+                  <i class="fa fa-calendar"></i>
+                </div><!-- /input-group-addon -->
+                <input class="form-control datetimepicker" type="text" placeholder="Date & Time" style="background: #fff" readonly />                
+              </div><!-- /input group -->
+              <button class="btn btn-success btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-pencil"></i> Modify</span></button>
+              <div style="padding:10px"></div>
+            </div><!-- /div1 -->
+          </div><!-- /row -->
+        </div><!-- /modal-body -->
+      </div><!-- /modal-content -->
+    </div><!-- /modal-dialog -->
+  </div><!-- /modal -->
+  <!-- ......................./modal for edit trip....................... -->
+
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/datetimepicker/moment.js" type="text/javascript" type="text/javascript"></script>
+  <script src="js/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+  <script src="js/spinner/spin.min.js"></script>
+  <script src="js/spinner/ladda.min.js"></script>
+  <script src="js/techie/viewportchecker.js" type="text/javascript"></script>
+  <script src="js/pages/activetrips/custom.js" type="text/javascript"></script>
+  <script src="js/techie/custom.js" type="text/javascript"></script>
+  <script src="js/techie/main.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+/*! 
+ *   TLT v1.0
+ *   Author: Vivin Antony
+ *   Website: www.thelittletechie.blogspot.com
+*/
+
+/* carpool.jsp */
+.header-bg { background-color: #e6bd2e }
+.carpool-page { margin-bottom: 20px }
+.carpool-page h4 { color: #e6bd2e }
+.carpool-page p { font-size: 16px; color:#000; text-indent: 20px }
+.carpool-page .inner-side-box { padding: 10px; background-color: #f0efac }
+.box.box-carpool { border-top-color: #e6bd2e; padding: 10px}
+.box.box-carpool { min-height: 205px }
+.box.box-carpool p { font-size: 15px }
+
+@media screen and (max-width: 500px) { .disappear-below-500 { display: none } }
+@media screen and (min-width: 501px) and (max-width: 100000px) { .disappear-above-500 { display: none } }

@@ -1,0 +1,21 @@
+/*! 
+ *   TLT v1.0
+ *   Author: Vivin Antony
+ *   Website: www.thelittletechie.blogspot.com
+*/
+
+/* activetripsmatching.jsp */
+/* Abbr: s-d source-destination; r-c(n) right-column(num) */
+.webpage .main-box { background-color: rgba(238,238,238,1); padding: 10px }
+.webpage .main-box .left-box { border-right: 1px solid #999 }
+.webpage .main-box .right-box { border-left: 1px solid #999 }
+.webpage .inner-box { background-color: #fff; padding: 5px 0; margin: 0 0 10px 0 }
+.webpage .main-box .r-c1, .r-c2, .r-c3 { text-align: center; font-size: 16px }
+.webpage .main-box .r-c1 { color: #448ccb }
+.webpage .main-box .r-c2 { color: #e60505 }
+.webpage .main-box .r-c3 { color: #56d784 }
+.webpage .main-box .left-box .circle { width: 50px; height: 50px; background-color: #56d784; border-radius: 50px; color: #fff; text-align: center; line-height: 50px }
+.webpage .main-box .left-box .photo-container { width: 95px; height: 95px; line-height: 95px; background-color: #fff; text-align: center; }
+.webpage .main-box .left-box .name { font-size: 20px }
+@media (max-width: 767px) { .webpage .main-box .left-box, .webpage .main-box .right-box { border: none } }
+@media (max-width: 767px) { .webpage .main-box .left-box { border-top: 1px solid #999; padding-top: 10px; margin-top: 10px; } }

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>PoolCircle</title>
+    <link rel="icon" type="image/ico" href="img/techie/favicon.ico">
+
+    <!-- Styles -->      
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap/jasny-bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap/bootstrap-formhelpers.min.css" rel="stylesheet">      
+    <link href="css/techie/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/pages/profile/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/spinner/ladda-themeless.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="container"><!-- container -->
+        <a class='navbar-brand' href='index.html'><img src="img/techie/logo-icon.png" alt="PoolCircle Logo" style="width: 40px; margin-top: 15px"></a>
+        <div class="navbar-right"><!-- navbar-right -->
+          <ul class="nav navbar-nav">
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i>
+                <span>Vivin Antony <i class="caret"></i></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- user image -->
+                <li class="user-header">
+                  <img src="img/techie/avatar1.png" class="img-circle" alt="User Image" />
+                  <p>
+                    Vivin Antony
+                    <small>thelittletechie@gmail.com</small>
+                  </p>
+                </li>
+                <!-- user body -->
+                <li class="user-body">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Connect</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Invite</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Rate</a>
+                  </div>
+                </li>
+                <!-- user footer -->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="profile.html" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">Logout <i class="fa fa-sign-out"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /navbar-right -->
+      </div><!-- /container -->
+    </nav>
+  </header>
+
+  <div class="container-fluid map-bg webpage"><!-- container-fluid -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div style="padding: 20px 0"><!-- div1 -->            
+          </div><!-- /div1 -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-md-3 menu-box" style="padding: 0"><!-- col-md-3 menu-box -->
+          <nav class="navbar navbar-invert" role="navigation">
+            <div class="navbar-header"><!-- navbar-header -->
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border: 1px solid grey">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars fa-lg"></i>
+              </button>
+              <span class="navbar-brand color-famgreen" style="font-size: 20px"><i class="fa fa-ellipsis-v"></i> Menu</span>
+            </div><!-- /navbar-header -->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="max-height: none"><!-- navbar-collapse -->
+              <ul class="nav nav-pills nav-stacked menu-page">
+                <li class="disappear" style="margin: 30px 0 0 0"></li>
+                <li class="menu_carpool"><a href="activetrips.html"><i class="fa fa-car fa-fw"></i> Carpool</a></li>
+                <li class="menu_schedules"><a href="schedules.html"><i class="fa fa-clock-o fa-fw"></i> Schedules</a></li>
+                <li class="menu_community"><a href="community.html"><i class="fa fa-group fa-fw"></i> Community</a></li>
+                <li class="menu_profile"><a href="profile.html"><i class="fa fa-user fa-fw"></i> Profile</a></li>
+                <li class="menu_marketplace" id="menu-accordion"><a data-toggle="collapse" data-parent="#menu-accordion" href="#sub-menu-1"><i class="fa fa-building fa-fw"></i> Marketplace <span class="caret"></span></a></li>
+              </ul>
+              <div id="sub-menu-1" class="panel-collapse collapse" style="background-color: rgba(36,36,36,0.6);"><!-- collapseOne -->
+                <ul class="nav nav-pills nav-stacked menu-page">
+                  <li class="menu_reva"><a href="reva.html"><i class="fa fa-dot-circle-o fa-fw"></i> Mahindra Reva</a></li>
+                </ul>
+              </div><!-- /collapseOne -->
+            </div><!-- /navbar-collapse -->
+          </nav>
+        </div><!-- /col-md-3 /menu-box -->
+
+        <div class="col-md-9 main-box"><!-- col-md-9 main-box -->
+          <div class="row"><!-- row -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <h2>PROFILE <i class="fa fa-question-circle color-success tooltiptop" data-toggle="tooltip" title="A complete profile helps everyone make informed decisions about their carpool."></i></h2>
+              <p>Just complete the profile below to start Carpooling</p>              
+              <hr class="hr-header-line" />
+            </div><!-- /col-md-12 -->
+          </div><!-- /row -->
+
+          <div class="row"><!-- row -->
+            <div class="col-md-4 col-sm-4 col-sm-push-8 text-center"><!-- col-md-4 -->
+              <div class="fileinput fileinput-new" data-provides="fileinput"><!-- fileinput -->
+                <div class="fileinput-preview thumbnail" data-trigger="fileinput"><img src="img/placeholder/user-photo.jpg"></div>
+                <div style="display: none"><!-- div -->
+                  <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                  <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                </div><!-- /div -->
+              </div><!-- /fileinput -->
+            </div><!-- /col-md-4 -->
+            <div class="col-md-8 col-sm-8 col-sm-pull-4"><!-- col-md-8 -->
+              <form class="form-horizontal" role="form">
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputName" class="col-sm-4 col-xs-3 control-label">Name</label>
+                  <div class="col-sm-4 col-xs-5"><!-- col-sm-4 -->
+                    <input type="text" class="form-control" id="inputName" placeholder="First Name">
+                  </div><!-- /col-sm-4 -->
+                  <div class="col-sm-4 col-xs-4"><!-- col-sm-4 -->
+                    <input type="text" class="form-control" placeholder="Last Name">
+                  </div><!-- /col-sm-4 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputEmail" class="col-sm-4 col-xs-3 control-label">Email</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                  </div><!-- /col-sm-8 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="countries_phone" class="col-sm-4 col-xs-3 control-label">Country</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <select id="countries_phone" class="form-control bfh-countries" data-country="IN" data-flags="true"></select>
+                  </div><!-- /col-sm-8 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputPhone" class="col-sm-4 col-xs-3 control-label">Phone</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <input type="text" id="inputPhone" class="form-control bfh-phone" data-country="countries_phone">
+                  </div><!-- /col-sm-8 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputPromo" class="col-sm-4 col-xs-3 control-label">Promo Code</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <div class="input-group"><!-- input-group -->
+                      <input type="text" class="form-control" id="inputPromo" placeholder="Promo Code">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" data-toggle="modal" data-target=".promoCodeModal">Submit</button>
+                      </span>
+                    </div><!-- /input-group -->
+                  </div><!-- /col-sm-8 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputGender" class="col-sm-4 col-xs-3 control-label">Gender</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <div class="btn-group" data-toggle="buttons"><!-- div1 -->
+                      <label class="btn btn-default active" style="margin-bottom: 5px">
+                        <input type="radio" name="gender" checked> <i class="fa fa-male fa-fw"></i> Male
+                      </label>
+                      <label class="btn btn-default">
+                        <input type="radio" name="gender"><i class="fa fa-female fa-fw"></i> Female
+                      </label>
+                    </div><!-- /div1 -->
+                  </div><!-- /col-sm-8 -->
+                </div><!-- /form-group -->
+              </form>
+            </div><!-- /col-md-8 -->
+          </div><!-- /row -->
+
+          <div style="height: 20px"></div>
+
+          <div class="row"><!-- row -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <h4 class="sub-heading">YOUR VEHICLE DETAILS</h4>
+              <p class="sub-description">(Required if you offer Carpools)</p>              
+              <hr class="hr-header-line" />
+            </div><!-- /col-md-12 -->
+          </div><!-- /row -->
+
+          <div class="row"><!-- row -->
+            <div class="col-md-4 col-sm-4 col-sm-push-8 text-center"><!-- col-md-4 -->
+              <div class="fileinput fileinput-new" data-provides="fileinput"><!-- fileinput -->
+                <div class="fileinput-preview thumbnail" data-trigger="fileinput"><img src="img/placeholder/car-photo.jpg"></div>
+                <div style="display: none"><!-- div -->
+                  <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                  <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                </div><!-- /div -->
+              </div><!-- /fileinput -->
+            </div><!-- /col-md-4 -->
+            <div class="col-md-8 col-sm-8 col-sm-pull-4"><!-- col-md-8 -->
+              <form class="form-horizontal" role="form">
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputModel" class="col-sm-4 col-xs-3 control-label">Make & Model</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <input type="text" class="form-control" id="inputModel" placeholder="Make & Model">
+                  </div><!-- /col-sm-8 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputRegistration" class="col-sm-4 col-xs-3 control-label">Registration Number</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <input type="text" class="form-control" id="inputRegistration" placeholder="Registration Number">
+                  </div><!-- /col-sm-8 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputFuel" class="col-sm-4 col-xs-3 control-label">Expected Fuel Share</label>
+                  <div class="col-sm-8 col-xs-9"><!-- col-sm-8 -->
+                    <div class="input-group" style="width: 190px"><!-- input-group -->
+                      <label class="input-group-addon"><i class="fa fa-inr"></i></label>
+                      <input type="text" class="form-control" id="inputFuel" placeholder="0.0">
+                      <span class="input-group-btn btn-group">
+                        <select class="form-control" style="width: 80px; border-top-right-radius: 5px; border-bottom-right-radius: 5px">
+                          <option>km</option>
+                          <option>mile</option>
+                        </select>
+                      </span> 
+                    </div><!-- input-group -->
+                  </div><!-- /col-sm-8 -->                 
+                </div><!-- /form-group -->
+              </form>
+            </div><!-- /col-md-8 -->
+          </div><!-- /row -->
+
+          <div style="height: 20px"></div>
+
+          <div class="row"><!-- row -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <h4 class="sub-heading">IMPROVE YOUR TRUST SCORE</h4>
+              <p class="sub-description">(Share more info and help us find you safe rides - we will not spam you)</p>
+              <hr class="hr-header-line" />
+            </div><!-- /col-md-12 -->
+          </div><!-- /row -->
+
+          <div class="row"><!-- row -->
+            <div class="col-md-4 col-sm-4 col-sm-push-8"></div>
+            <div class="col-md-8 col-sm-8 col-sm-pull-4"><!-- col-md-8 -->
+              <form class="form-horizontal" role="form">
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputCorpemail" class="col-sm-4 col-xs-3 control-label">Corp email address</label>
+                  <div class="col-sm-6 col-xs-7"><!-- col-sm-6 -->
+                    <div class="input-group"><!-- input-group -->
+                      <input type="text" class="form-control" id="inputCorpemail" placeholder="Corp Email">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Submit</button>
+                      </span>
+                    </div><!-- /input-group -->
+                  </div><!-- /col-sm-6 -->
+                  <div class="col-sm-2 col-xs-2"><!-- col-sm-2 -->
+                    <span class="fa-stack fa-lg points-earned tooltiptop" data-toggle="tooltip" title="40 Trust Points Earned" style="display: block">
+                      <i class="fa fa-certificate fa-stack-2x"></i>
+                      <span class="fa fa-stack-1x fa-inverse">40</span>
+                    </span>
+                    <span class="fa-stack fa-lg points-not-earned tooltiptop" data-toggle="tooltip" title="Earn 40 Trust Points" style="display: none">
+                      <i class="fa fa-certificate fa-stack-2x"></i>
+                      <span class="fa fa-stack-1x fa-inverse">40</span>
+                    </span>
+                  </div><!-- /col-sm-2 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputFacebook" class="col-sm-4 col-xs-3 control-label">Facebook</label>
+                  <div class="col-sm-6 col-xs-7"><!-- col-sm-6 -->
+                    <a class="btn btn-social btn-facebook" id="inputFacebook">
+                      <i class="fa fa-facebook"></i> Connect
+                    </a>
+                  </div><!-- /col-sm-6 -->
+                  <div class="col-sm-2 col-xs-2"><!-- col-sm-2 -->
+                    <span class="fa-stack fa-lg points-earned tooltiptop" data-toggle="tooltip" title="20 Trust Points Earned" style="display: none">
+                      <i class="fa fa-certificate fa-stack-2x"></i>
+                      <span class="fa fa-stack-1x fa-inverse">20</span>
+                    </span>
+                    <span class="fa-stack fa-lg points-not-earned tooltiptop" data-toggle="tooltip" title="Earn 20 Trust Points" style="display: block">
+                      <i class="fa fa-certificate fa-stack-2x"></i>
+                      <span class="fa fa-stack-1x fa-inverse">20</span>
+                    </span>
+                  </div><!-- /col-sm-2 -->
+                </div><!-- /form-group -->
+                <div class="form-group"><!-- form-group -->
+                  <label for="inputLinkedin" class="col-sm-4 col-xs-3 control-label">Linkedin</label>
+                  <div class="col-sm-6 col-xs-7"><!-- col-sm-6 -->
+                    <a class="btn btn-social btn-linkedin" id="inputLinkedin">
+                      <i class="fa fa-linkedin"></i> Connect
+                    </a>
+                  </div><!-- /col-sm-6 -->
+                  <div class="col-sm-2 col-xs-2"><!-- col-sm-2 -->
+                    <span class="fa-stack fa-lg points-earned tooltiptop" data-toggle="tooltip" title="20 Trust Points Earned" style="display: none">
+                      <i class="fa fa-certificate fa-stack-2x"></i>
+                      <span class="fa fa-stack-1x fa-inverse">20</span>
+                    </span>
+                    <span class="fa-stack fa-lg points-not-earned tooltiptop" data-toggle="tooltip" title="Earn 20 Trust Points" style="display: block">
+                      <i class="fa fa-certificate fa-stack-2x"></i>
+                      <span class="fa fa-stack-1x fa-inverse">20</span>
+                    </span>
+                  </div><!-- /col-sm-2 -->
+                </div><!-- /form-group -->
+              </form>
+            </div><!-- /col-md-8 -->
+          </div><!-- /row -->
+
+          <div class="row"><!-- row -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-primary btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-save"></i> Save</span></button>
+                </div>
+              </div>
+            </div><!-- /col-md-12 -->
+          </div><!-- /row -->
+        </div><!-- /col-md-9 /main-box -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div><!-- /container-fluid -->
+
+  <i class="fa fa-chevron-circle-up fa-2x scrollup tooltiptop" data-toggle="tooltip" title="Scroll to top"></i>
+
+  <footer>
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-lg-9 col-md-9 col-sm-7"><!-- col-md-9 -->
+          <table style="width: auto; margin: 8px auto">
+            <tr>
+              <td style="color: #eee"><i class="fa fa-copyright"></i> PoolCircle 2015</td>
+            </tr>
+          </table>
+        </div><!-- /col-md-9 -->
+        <div class="col-lg-3 col-md-3 col-sm-5"><!-- col-md-3 -->
+          <div class="appear" style="padding: 5px 0"></div>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Facebook">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-facebook fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Twitter">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-twitter fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Linkedin">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-linkedin fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+        </div><!-- /col-md-3 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </footer>
+
+  <!-- .......................modal for mobile verification....................... -->
+  <div class="modal fade mobileVerifyModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+    <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+      <div class="modal-content"><!-- modal-content -->
+        <div class="modal-header"><!-- modal-header -->
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Phone Verification</h4>
+        </div><!-- /modal-header -->
+        <div class="modal-body"><!-- modal-body -->
+          <div class="row"><!-- row -->
+            <div style="width:80%; margin:0 auto"><!-- div1 -->
+              <div class="input-group margin-bottom-sm"><!-- input-group -->
+                <span class="input-group-addon"><i class="fa fa-ticket fa-fw"></i></span>
+                <input class="form-control" type="text" placeholder="Code">
+              </div><!-- /input-group -->
+              <button class="btn btn-success btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-check"></i> Verify</span></button>
+              <div style="padding:10px"></div>
+            </div><!-- /div1 -->
+          </div><!-- /row -->
+        </div><!-- /modal-body -->
+      </div><!-- /modal-content -->
+    </div><!-- /modal-dialog -->
+  </div><!-- /modal -->
+  <!-- ......................./modal for mobile verification....................... -->
+
+  <!-- .......................modal for promo code....................... -->
+  <div class="modal fade promoCodeModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+    <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+      <div class="modal-content"><!-- modal-content -->
+        <div class="modal-header"><!-- modal-header -->
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Promo Code</h4>
+        </div><!-- /modal-header -->
+        <div class="modal-body"><!-- modal-body -->
+          <div class="row"><!-- row -->
+            <div style="width:80%; margin:0 auto"><!-- div1 -->
+              <div class="input-group margin-bottom-sm"><!-- input-group -->
+                <span class="input-group-addon"><i class="fa fa-ticket fa-fw"></i></span>
+                <input class="form-control" type="text" placeholder="Promo Code">
+              </div><!-- /input-group -->
+              <button class="btn btn-success btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-check"></i> Submit</span></button>
+              <div style="padding:10px"></div>
+            </div><!-- /div1 -->
+          </div><!-- /row -->
+        </div><!-- /modal-body -->
+      </div><!-- /modal-content -->
+    </div><!-- /modal-dialog -->
+  </div><!-- /modal -->
+  <!-- ......................./modal for promo code....................... -->
+
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap/jasny-bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap/bootstrap-formhelpers.js" type="text/javascript"></script>  
+  <script src="js/pages/profile/custom.js" type="text/javascript"></script>
+  <script src="js/techie/custom.js" type="text/javascript"></script>
+  <script src="js/spinner/spin.min.js" type="text/javascript"></script>
+  <script src="js/spinner/ladda.min.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+/*! 
+ *   TLT v1.0
+ *   Author: Vivin Antony
+ *   Website: www.thelittletechie.blogspot.com
+*/
+
+/* bus.jsp */
+/* Abbr: s-d source-destination; r-c(n) right-column(num) */
+.webpage .main-box { background-color: rgba(238,238,238,1); padding: 10px }
+.webpage .inner-box { background-color: #fff; padding: 5px; margin: 0 0 10px 0 }
+.webpage .main-box .r-c1, .r-c2, .r-c3 { text-align: center; font-size: 16px }
+.webpage .main-box .r-c1 { color: #448ccb }
+.webpage .main-box .r-c2 { color: #e60505 }
+.webpage .main-box .r-c3 { color: #56d784 }

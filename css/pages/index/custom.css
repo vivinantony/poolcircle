@@ -1,0 +1,67 @@
+/*! 
+ *   TLT v1.0
+ *   Author: Vivin Antony
+ *   Website: www.thelittletechie.blogspot.com
+*/
+
+/* index.jsp */
+.carousel, .item, .active { height: 100% }
+.carousel-inner { height: 100% }
+.fill { width: 100%; height: 100%; background-position: center; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover }
+.banner-wrapper { z-index: 999; position: absolute; top: 50px; left: 0; right: 0; bottom: 0; padding: 20px }
+.banner-description { color: #fff; font-size: 30px }
+@media (max-width: 991px) { .banner-wrapper .banner-description { font-size: 22px } }
+@media (max-width: 767px) { .banner-wrapper .banner-description { font-size: 20px } }
+@media (max-width: 440px) { .banner-wrapper .banner-description { font-size: 16px } }
+.banner-wrapper .banner-description img { width: 300px; }
+@media (max-width: 991px) { .banner-wrapper .banner-description img { width: 260px } }
+@media (max-width: 767px) { .banner-wrapper .banner-description img { width: 250px } }
+@media (max-width: 440px) { .banner-wrapper .banner-description img { width: 200px } }
+@media (max-width: 767px) { .max-767-center { text-align: center } }
+@media (max-width: 450px) { .banner-wrapper .app-buttons img { width: 120px ; margin: 3px 0 } }
+.banner-bottom-box { padding: 20px; background-color: rgba(0,0,0,0.5); border: 1px solid #333; border-radius: 5px }
+.theme-1 { padding-bottom: 20px }
+.theme-1 .main-heading { height: 50px; color: #fff; background-color: #e6bd2e; text-align: center; line-height: 50px; font-size: 30px; margin-bottom: 10px }
+.theme-1 .heading { font-size: 24px; color: #009946; } 
+.theme-1 .description { font-size: 16px; font-weight: 400; color: #476172; }
+.theme-2 { padding-bottom: 20px; background: #c33f3f }
+.theme-2 .main-heading { height: 50px; color: #fff; background-color: #d15757; text-align: center; line-height: 50px; font-size: 30px; margin-bottom: 10px }
+.theme-2 .bigsemicircle { position: relative; text-align: center }
+.theme-2 .bigsemicircle .semicircle1 { height: 250px; width: 500px; margin: 0 auto; border-radius: 250px 250px 0 0; background: #7c230c; }
+.theme-2 .bigsemicircle .semicircle2 { height: 250px; width: 500px; margin: 0 auto; border-radius: 250px 250px 0 0; background: #145e89; }
+.theme-2 .bigsemicircle .semicircle3 { height: 250px; width: 500px; margin: 0 auto; border-radius: 250px 250px 0 0; background: #734b04; }
+.theme-2 .bigsemicircle .semicircle4 { height: 250px; width: 500px; margin: 0 auto; border-radius: 250px 250px 0 0; background: #077743; }
+.theme-2 .semicirclealign { padding: 30px 0 0 0; width: 400px; margin: 0 auto; font-size: 20px; color: #fff }
+@media screen and (max-width: 550px) { 
+	.theme-2 .bigsemicircle .semicircle1 { min-height: 280px; width: 90%; border-radius: 20px }
+	.theme-2 .bigsemicircle .semicircle2 { min-height: 280px; width: 90%; border-radius: 20px }
+	.theme-2 .bigsemicircle .semicircle3 { min-height: 280px; width: 90%; border-radius: 20px }
+	.theme-2 .bigsemicircle .semicircle4 { min-height: 280px; width: 90%; border-radius: 20px }
+	.theme-2 .semicirclealign { padding: 10px; width: 80%; margin: 0 auto; font-size: 20px; color: #fff }
+	.theme-2 .img-small-circle { width: 100px }
+	.theme-2 .img-small-circle-ring { width: 117px }
+}
+.theme-3 { padding-bottom: 20px; background: #9a9807 }
+.theme-3 .main-heading { height: 50px; color: #fff; background-color: #c3c11d; text-align: center; line-height: 50px; font-size: 30px; margin-bottom: 10px }
+.theme-3 .circle { font-size: 18px; color: #fff }
+.theme-3 .circle1, .theme-3 .circle2, .theme-3 .circle3, .theme-3 .circle4 { width: 30px; height: 30px; border-radius: 30px; line-height: 30px; text-align: center; color: #fff; font-weight: 700; margin: 0 10px 0 0 }
+.theme-3 .circle1 { background-color: #02782c }
+.theme-3 .circle2 { background-color: #e22c0e }
+.theme-3 .circle3 { background-color: #0414e8 }
+.theme-3 .circle4 { background-color: #ead703 }
+.theme-3 #chevron { padding: 10px;  width: 100%; border-top-left-radius: 50px; border-top-right-radius: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 50px; background-color: #c3c11d; text-align: center }
+.theme-3 #chevron h4 { text-transform: uppercase;  color: green; font-weight: 700 }
+.theme-3 #chevron h5 { color: red; font-weight: 700; font-size: 16px }
+.theme-3 #chevron .description { font-size: 12px }
+.theme-3 #chevron .cost { font-size: 24px; color: green }
+.theme-3 #chevron .cost-save { font-size: 25px; color: red }
+​.featured-on { padding-bottom: 20px; background: #9a9807 }
+.featured-on .main-heading { height: 50px; color: #fff; background-color: #077743; text-align: center; line-height: 50px; font-size: 30px; margin-bottom: 10px }
+
+
+.scroll-down-icon { -webkit-animation: scrolldown 2s linear infinite; z-index: 999; position: absolute; bottom: 30px; color: #fff; }
+@-webkit-keyframes scrolldown { from{margin-top:0; opacity: 1} to{margin-top: 30px; opacity: 0} }
+
+/* List of: (display: none/block) */
+@media screen and (max-width: 991px) { .banner-wrapper .disappear { display: none } }
+@media screen and (min-width: 768px) and (max-width: 100000px) { .theme-1-disappear, .theme-2-disappear, .theme-3-disappear, .theme-4-disappear  { display: none } }

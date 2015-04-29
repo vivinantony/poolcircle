@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PoolCircle</title>
+    <link rel="icon" type="image/ico" href="img/techie/favicon.ico">
+
+    <!-- Styles -->
+    <link href="css/techie/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/pages/community/custom.css" rel="stylesheet" type="text/css">    
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/spinner/ladda-themeless.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="container"><!-- container -->
+        <a class='navbar-brand' href='index.html'><img src="img/techie/logo-icon.png" alt="PoolCircle Logo" style="width: 40px; margin-top: 15px"></a>
+        <div class="navbar-right"><!-- navbar-right -->
+          <ul class="nav navbar-nav">
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i>
+                <span>Vivin Antony <i class="caret"></i></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- user image -->
+                <li class="user-header">
+                  <img src="img/techie/avatar1.png" class="img-circle" alt="User Image" />
+                  <p>
+                    Vivin Antony
+                    <small>thelittletechie@gmail.com</small>
+                  </p>
+                </li>
+                <!-- user body -->
+                <li class="user-body">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Connect</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Invite</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Rate</a>
+                  </div>
+                </li>
+                <!-- user footer -->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="profile.html" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">Logout <i class="fa fa-sign-out"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /navbar-right -->
+      </div><!-- /container -->
+    </nav>
+  </header>
+
+  <div class="container-fluid map-bg webpage"><!-- container-fluid -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div style="padding: 20px 0"><!-- div1 -->
+          </div><!-- /div1 -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-md-3 menu-box" style="padding: 0"><!-- col-md-3 menu-box -->
+          <nav class="navbar navbar-invert" role="navigation">
+            <div class="navbar-header"><!-- navbar-header -->
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border: 1px solid grey">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars fa-lg"></i>
+              </button>
+              <span class="navbar-brand color-famgreen" style="font-size: 20px"><i class="fa fa-ellipsis-v"></i> Menu</span>
+            </div><!-- /navbar-header -->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="max-height: none"><!-- navbar-collapse -->
+              <ul class="nav nav-pills nav-stacked menu-page">
+                <li class="disappear" style="margin: 30px 0 0 0"></li>
+                <li class="menu_carpool"><a href="activetrips.html"><i class="fa fa-car fa-fw"></i> Carpool</a></li>
+                <li class="menu_schedules"><a href="schedules.html"><i class="fa fa-clock-o fa-fw"></i> Schedules</a></li>
+                <li class="menu_community"><a href="community.html"><i class="fa fa-group fa-fw"></i> Community</a></li>
+                <li class="menu_profile"><a href="profile.html"><i class="fa fa-user fa-fw"></i> Profile</a></li>
+                <li class="menu_marketplace" id="menu-accordion"><a data-toggle="collapse" data-parent="#menu-accordion" href="#sub-menu-1"><i class="fa fa-building fa-fw"></i> Marketplace <span class="caret"></span></a></li>
+              </ul>
+              <div id="sub-menu-1" class="panel-collapse collapse" style="background-color: rgba(36,36,36,0.6);"><!-- collapseOne -->
+                <ul class="nav nav-pills nav-stacked menu-page">
+                  <li class="menu_reva"><a href="reva.html"><i class="fa fa-dot-circle-o fa-fw"></i> Mahindra Reva</a></li>
+                </ul>
+              </div><!-- /collapseOne -->
+            </div><!-- /navbar-collapse -->
+          </nav>
+        </div><!-- /col-md-3 /menu-box -->
+
+        <div class="col-md-9 main-box"><!-- col-md-9 main-box -->
+          <div class="row"><!-- row -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <h2>COMMUNITY <i class="fa fa-question-circle color-success tooltiptop" data-toggle="tooltip" title="Customize MyCircle gives you a safe carpool enviroment, but will also restrict the number of carpools available for you."></i></h2>
+              <p></p>              
+              <hr class="hr-header-line" />
+            </div><!-- /col-md-12 -->
+          </div><!-- /row -->
+
+          <div class="row"><!-- row -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <ul class="nav nav-tabs" role="tablist" id="myTab">
+                <li class="active"><a href="#mycircle" role="tab" data-toggle="tab"><i class="fa fa-group fa-fw"></i> <span class="disappear-below-500">Mycircle</span></a></li>
+                <li><a href="#invite" role="tab" data-toggle="tab"><i class="fa fa-plus fa-fw"></i> <span class="disappear-below-500">Invite</span></a></li>
+                <li><a href="#rating" role="tab" data-toggle="tab"><i class="fa fa-star-half-empty fa-fw"></i> <span class="disappear-below-500">Rating</span></a></li>
+              </ul>
+
+              <div class="tab-content"><!-- tab-content -->
+                <div class="tab-pane active" id="mycircle"><!-- mycircle -->
+                  <form role="form">
+                    <h4 class="disappear-above-500 color-primary">Mycircle</h4>
+                    <div class="row"><!-- row -->
+                      <div class="col-md-12"><!-- col-md-12 -->
+                        <p>Choose who you want to ride with</p>
+                      </div><!-- /col-md-12 -->
+                    </div><!-- /row --> 
+                    <div class="row"><!-- row -->
+                      <div class="col-md-12"><!-- col-md-12 -->
+                        <div class="radio"><!-- radio -->
+                          <label>
+                            <input type="radio" name="who" value="option1" checked>
+                            Show me all carpools
+                          </label>
+                        </div><!-- /radio -->
+                      </div><!-- /col-md-12 -->
+                    </div><!-- /row -->
+                    <div class="row"><!-- row -->
+                      <div class="col-md-12"><!-- col-md-12 -->
+                        <div class="radio"><!-- radio -->
+                          <label>
+                            <input type="radio" name="who" value="option2">
+                            Show me carpools with only Females
+                          </label>
+                        </div><!-- /radio -->
+                      </div><!-- /col-md-12 -->
+                    </div><!-- /row -->
+                    <div class="row"><!-- row -->
+                      <div class="col-md-12"><!-- col-md-12 -->
+                        <div class="radio"><!-- radio -->
+                          <label>
+                            <input type="radio" name="who" value="option3">
+                            Customize MyCircle
+                          </label>
+                        </div><!-- /radio -->
+                      </div><!-- /col-md-12 -->
+                    </div><!-- /row -->
+
+                    <div class="row mycircle-show-hide hide-div"><!-- row -->
+                      <div class="col-md-4 col-sm-4 margin-bottom-md"><!-- col-md-4 -->
+                        <div class="box box-success"><!-- box -->
+                          <div class="community-box"><!-- community-box -->
+                            <h4><i class="fa fa-group"></i> Corporate colleagues</h4>
+                            <hr class="hr-line" />
+                            <div class="show-div"><!-- show/hide-div -->
+                              <div class="input-group"><!-- input-group -->
+                                <input type="email" class="form-control" placeholder="Email">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default" type="button">Validate</button>
+                                </span>
+                              </div><!-- /input-group -->
+                            </div><!-- /show/hide-div -->
+                            <div class="hide-div fontsize-16"><!-- show/hide-div -->
+                              <div><!-- div1 -->
+                                <span>vivin@poolcircle.com</span> <a href="#" class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Modify"><i class="fa fa-pencil"></i></a>
+                              </div><!-- /div1 -->
+                              <div><!-- div2 -->
+                                <div class="checkbox"><!-- checkbox -->
+                                  <label>
+                                    <input type="checkbox" value="email" class="corp-check">
+                                    Add 123 colleagues
+                                  </label>
+                                </div><!-- /checkbox -->
+                              </div><!-- /div2 -->
+                            </div><!-- /show/hide-div -->
+                          </div><!-- /community-box -->
+                        </div><!-- /box -->
+                        <div class="box"><!-- box -->
+                          <div class="show-div text-center"><!-- show/hide-div -->
+                            <label class="big-circle corp-circle">0</label>
+                          </div><!-- /show/hide-div -->
+                        </div><!-- /box -->
+                      </div><!-- /col-md-4 -->
+
+                      <div class="col-md-4 col-sm-4 margin-bottom-md"><!-- col-md-4 -->
+                        <div class="box box-success"><!-- box -->
+                          <div class="community-box"><!-- community-box -->
+                            <h4><i class="fa fa-facebook-square color-facebook"></i> Facebook friends</h4>
+                            <hr class="hr-line" />
+                            <div class="hide-div text-center"><!-- show/hide-div -->
+                              <a class="btn btn-social btn-facebook">
+                                <i class="fa fa-facebook"></i> Connect with Facebook
+                              </a>
+                            </div><!-- /show/hide-div -->
+                            <div class="show-div fontsize-16"><!-- show/hide-div -->
+                              <div><!-- div1 -->
+                                <span>Vivin Antony</span> <a href="#" class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Modify"><i class="fa fa-pencil"></i></a>
+                              </div><!-- /div1 -->
+                              <div><!-- div2 -->
+                                <div class="checkbox"><!-- checkbox -->
+                                  <label>
+                                    <input type="checkbox" value="facebook" class="fb-check">
+                                    Add 150 friends
+                                  </label>
+                                </div><!-- /checkbox -->
+                              </div><!-- /div2 -->
+                            </div><!-- /show/hide-div -->
+                          </div><!-- /community-box -->
+                        </div><!-- /box -->  
+                        <div class="box"><!-- box -->
+                          <div class="show-div text-center"><!-- show/hide-div -->
+                            <label class="big-circle fb-circle">150</label>
+                          </div><!-- /show/hide-div -->
+                        </div><!-- /box -->
+                      </div><!-- /col-md-4 -->
+
+                      <div class="col-md-4 col-sm-4 margin-bottom-md"><!-- col-md-4 -->
+                        <div class="box box-success"><!-- box -->
+                          <div class="community-box"><!-- community-box -->
+                            <h4><i class="fa fa-linkedin-square color-linkedin"></i> Linkedin connections</h4>
+                            <hr class="hr-line" />
+                            <div class="show-div text-center"><!-- show/hide-div -->
+                              <a class="btn btn-social btn-linkedin">
+                                <i class="fa fa-linkedin"></i> Connect with Linkedin
+                              </a>
+                            </div><!-- /show/hide-div -->
+                            <div class="hide-div fontsize-16"><!-- show/hide-div -->
+                             <div><!-- div1 -->
+                                <span>Vivin Antony</span> <a href="#" class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Modify"><i class="fa fa-pencil"></i></a>
+                              </div><!-- /div1 -->
+                              <div><!-- div2 -->
+                                <div class="checkbox"><!-- checkbox -->
+                                  <label>
+                                    <input type="checkbox" value="linkedin" class="in-check">
+                                    Add 783 colleagues
+                                  </label>
+                                </div><!-- /checkbox -->
+                              </div><!-- /div2 -->
+                            </div><!-- /show/hide-div -->
+                          </div><!-- /community-box -->
+                        </div><!-- /box -->  
+                        <div class="box"><!-- box -->
+                          <div class="show-div text-center"><!-- show/hide-div -->
+                            <label class="big-circle in-circle">0</label>
+                          </div><!-- /show/hide-div -->
+                        </div><!-- /box -->
+                      </div><!-- /col-md-4 -->
+                    </div><!-- /row -->
+                    <div class="row"><!-- row -->
+                      <div class="col-md-12"><!-- col-md-12 -->
+                        <button type="button" class="btn btn-primary btn-block ladda-button loading-spin" data-style="expand-right" style="margin-top: 10px"><span class="ladda-label"><i class="fa fa-save"></i> Save</span></button>
+                      </div><!-- /col-md-12 -->
+                    </div><!-- /row -->
+                  </form>
+                </div><!-- /mycircle -->
+
+                <div class="tab-pane" id="invite"><!-- invite -->
+                  <form class="form-horizontal" role="form">
+                    <h4 class="disappear-above-500 color-primary">Invite</h4>
+                    <div class="row"><!-- row -->
+                      <div class="col-md-12"><!-- col-md-12 -->
+                        <p style="margin-bottom: 20px">Invite your friends to PoolCircle. A larger community improves your chance of finding carpools</p>
+                      </div><!-- /col-md-12 -->
+                    </div><!-- /row --> 
+                    <div class="row"><!-- row -->
+                      <div class="col-md-4 col-sm-4 col-md-offset-2 col-sm-offset-2 margin-bottom-md"><!-- col-md-4 -->
+                        <div class="box box-success"><!-- box -->
+                          <div class="community-box"><!-- community-box -->
+                            <h4><i class="fa fa-envelope"></i> By Email</h4>
+                            <hr class="hr-line" />
+                            <div class="text-center"><!-- text-center -->
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".inviteByEmailModal">Invite</button>
+                            </div><!-- /text-center -->
+                          </div><!-- /community-box -->
+                        </div><!-- /box -->
+                      </div><!-- /col-md-4 -->
+
+                      <div class="col-md-4 col-sm-4 margin-bottom-md"><!-- col-md-4 -->
+                        <div class="box box-success"><!-- box -->
+                          <div class="community-box"><!-- community-box -->
+                            <h4><i class="fa fa-facebook-square color-facebook"></i> Facebook friends</h4>
+                            <hr class="hr-line" />
+                            <div class="text-center"><!-- text-center -->
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".inviteFbFriendsModal">Invite</button>
+                            </div><!-- /text-center -->
+                          </div><!-- /community-box -->
+                        </div><!-- /box -->
+                      </div><!-- /col-md-4 -->
+                    </div><!-- /row -->
+
+                    <div class="row"><!-- row -->
+                      <div class="col-md-4 col-sm-4 col-xs-6 text-center"><!-- col-md-4  -->                     
+                        <label class="big-circle">0</label><br>
+                        <label>Invites Sent</label>
+                      </div><!-- /col-md-4  -->  
+                      <div class="col-md-4 col-sm-4 col-xs-6 text-center"><!-- col-md-4  -->                          
+                        <label class="big-circle">0</label><br>
+                        <label>Invites Accepted</label>
+                      </div><!-- /col-md-4  -->  
+                      <div class="col-md-4 col-sm-4 col-xs-12 text-center"><!-- col-md-4  -->                          
+                        <label class="big-circle" style="border-color: #3c8dbc">0</label><br>
+                        <label>Trust Points Earned</label>
+                      </div><!-- /col-md-4  -->  
+                    </div><!-- /row -->
+                  </form>
+                </div><!-- /invite -->
+
+                <div class="tab-pane" id="rating"><!-- rating -->
+                  <form class="form-horizontal" role="form">
+                    <h4 class="disappear-above-500 color-primary">Rating</h4>
+                    <div class="row"><!-- row -->
+                      <div class="col-md-12"><!-- col-md-12 -->
+                        <p style="margin-bottom: 20px">Rate others. Help make the platform more secure</p>
+                      </div><!-- /col-md-12 -->
+                    </div><!-- /row --> 
+                    <div class="row"><!-- row -->
+                      <div class="col-md-6 col-sm-6 margin-bottom-md"><!-- col-md-6 -->
+                        <div class="box"><!-- box -->
+                          <p style="padding: 10px">Ratings provided by you <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".rateAUserModal">Rate <i class="fa fa-thumbs-o-up"></i></button></p>
+                        </div><!-- /box -->
+                        <div class="box box-success"><!-- box -->
+                          <div class="community-box"><!-- community-box -->
+                            <div class="scroll-box"><!-- scroll-box -->
+                              <table class="table table-hover table-responsive">
+                                <tr>
+                                  <td>Isaac Kingston</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Premjeet Sharan</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Raghu Ramanujam</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                 <tr>
+                                  <td>Isaac Kingston</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Premjeet Sharan</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Raghu Ramanujam</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                 <tr>
+                                  <td>Isaac Kingston</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Premjeet Sharan</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Raghu Ramanujam</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                 <tr>
+                                  <td>Isaac Kingston</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Premjeet Sharan</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Raghu Ramanujam</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                 <tr>
+                                  <td>Isaac Kingston</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Premjeet Sharan</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Raghu Ramanujam</td>
+                                  <td>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-green"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>
+                                    <i class="fa fa-thumbs-up fa-lg rating-grey"></i>           
+                                  </td>
+                                </tr>
+                              </table>
+                            </div><!-- /scroll-box -->
+                          </div><!-- /community-box -->
+                        </div><!-- /box -->
+                      </div><!-- /col-md-6 -->
+
+                      <div class="col-md-6 col-sm-6 margin-bottom-md"><!-- col-md-6 -->
+                        <div class="box"><!-- box -->
+                          <p style="padding: 15px 10px">Ratings provided to you</p>
+                        </div><!-- /box -->
+                        <div class="box box-success"><!-- box -->
+                          <div class="community-box"><!-- community-box -->
+                            <div class="scroll-box"><!-- scroll-box -->
+                              <p>You have not been rated yet!</p>
+                            </div><!-- /scroll-box -->
+                          </div><!-- /community-box -->
+                        </div><!-- /box -->
+                      </div><!-- /col-md-6 -->
+                    </div><!-- /row -->
+                  </form>
+                </div><!-- /rating -->
+              </div><!-- /tab-content -->
+            </div><!-- /col-md-12 -->
+          </div><!-- /row -->
+        </div><!-- /col-md-9 /main-box -->
+        
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div><!-- /container-fluid -->
+
+  <i class="fa fa-chevron-circle-up fa-2x scrollup tooltiptop" data-toggle="tooltip" title="Scroll to top"></i>
+
+  <footer>
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-lg-9 col-md-9 col-sm-7"><!-- col-md-9 -->
+          <table style="width: auto; margin: 8px auto">
+            <tr>
+              <td style="color: #eee"><i class="fa fa-copyright"></i> PoolCircle 2015</td>
+            </tr>
+          </table>
+        </div><!-- /col-md-9 -->
+        <div class="col-lg-3 col-md-3 col-sm-5"><!-- col-md-3 -->
+          <div class="appear" style="padding: 5px 0"></div>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Facebook">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-facebook fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Twitter">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-twitter fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Linkedin">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-linkedin fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+        </div><!-- /col-md-3 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </footer>
+
+<!-- .......................modal for invite by email....................... -->
+<div class="modal fade inviteByEmailModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+  <div class="modal-dialog"><!-- modal-dialog -->
+    <div class="modal-content"><!-- modal-content -->
+      <div class="modal-header"><!-- modal-header -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Invite by email</h4>
+      </div><!-- /modal-header -->
+      <div class="modal-body"><!-- modal-body -->
+        <div class="row"><!-- row -->
+          <div style="width:80%; margin:0 auto"><!-- div1 -->
+            <p>Add your colleagues and other friends. Find safe rides, Earn 20 Trust Points for each friend who registers.</p>
+            <textarea class="form-control margin-bottom-md" rows="6" placeholder="Enter multiple email id's seperated by comma (,)"></textarea>
+            <button class="btn btn-primary btn-block ladda-button loading-spin" data-style="expand-right"><span class="ladda-label"><i class="fa fa-plus-circle"></i> Invite</span></button>
+            <div style="padding:10px"></div>
+          </div><!-- /div1 -->
+        </div><!-- /row -->
+      </div><!-- /modal-body -->
+    </div><!-- /modal-content -->
+  </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- ......................./modal for invite by email....................... -->
+
+<!-- .......................modal for invite facebook friends....................... -->
+<div class="modal fade inviteFbFriendsModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+  <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+    <div class="modal-content"><!-- modal-content -->
+      <div class="modal-header"><!-- modal-header -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Invite Facebook Friends</h4>
+      </div><!-- /modal-header -->
+      <div class="modal-body"><!-- modal-body -->
+        <div class="row"><!-- row -->
+          <div style="width: 100%; margin:0 auto"><!-- div1 -->
+            <p>Find safe rides, earn 20 points for each friend who registers.</p>
+            <div class="scroll-box"><!-- scroll-box -->
+              <table class="table table-hover table-responsive">
+                <tr>
+                  <td>Isaac Kingston</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Premjeet Sharan</td>
+                  <td><button class="btn btn-default btn-sm"> Sent</button></td>
+                </tr>
+                <tr>
+                  <td>Ragho Ramanujam</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Isaac Kingston</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Premjeet Sharan</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Ragho Ramanujam</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Isaac Kingston</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Premjeet Sharan</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Ragho Ramanujam</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Isaac Kingston</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Premjeet Sharan</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+                <tr>
+                  <td>Ragho Ramanujam</td>
+                  <td><button class="btn btn-primary btn-sm"> Invite</button></td>
+                </tr>
+              </table>
+            </div><!-- /scroll-box -->
+          </div><!-- /div1 -->
+        </div><!-- /row -->
+      </div><!-- /modal-body -->
+    </div><!-- /modal-content -->
+  </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- ......................./modal for invite facebook friends....................... -->
+
+<!-- .......................modal for rate a user....................... -->
+<div class="modal fade rateAUserModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+  <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+    <div class="modal-content"><!-- modal-content -->
+      <div class="modal-header"><!-- modal-header -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Rate a user</h4>
+      </div><!-- /modal-header -->
+      <div class="modal-body"><!-- modal-body -->
+        <div class="row"><!-- row -->
+          <div style="width:100%; margin:0 auto"><!-- div1 -->
+            <div class="input-group"><!-- input-group -->
+              <input type="text" class="form-control" placeholder="Name, email or phone">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+              </span>
+            </div><!-- /input-group -->
+            <div style="padding:10px"></div>
+            <div class="scroll-box"><!-- scroll-box -->
+              <div class="panel-group" id="rate-accordion"><!-- panel-group -->
+                <div class="panel panel-default"><!-- panel -->
+                  <div class="panel-heading"><!-- panel-heading -->
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#rate-accordion" href="#rate-user-1">
+                        <span class="color-primary">Isaac Kingston</span><br>
+                        <span>isaac@poolcircle.com</span>
+                      </a>
+                    </h4>
+                  </div><!-- /panel-heading -->
+                  <div id="rate-user-1" class="panel-collapse collapse"><!-- panel-collapse -->
+                    <div class="panel-body"><!-- panel-body -->
+                      <table>
+                        <tr>
+                          <td>
+                            <div class="photo-container"><!-- photo-container -->
+                              <i class="fa fa-user"></i>
+                            </div><!-- /photo-container -->
+                          </td>
+                          <td>
+                            <div class="rate-a-user"><!-- rate-a-user -->
+                              <input type="number" name="rating" data-min="1" data-max="5" class="rating rating-thumbs" data-icon-lib="fa" data-active-icon="fa-thumbs-up" data-inactive-icon="fa-thumbs-o-up" /><br>
+                               <button class="btn btn-default btn-xs" type="button">Rate</button>
+                            </div><!-- .rate-a-user -->
+                          </td>
+                        </tr>
+                      </table>
+                    </div><!-- /panel-body -->
+                  </div><!-- /panel-collapse -->
+                </div><!-- /panel -->
+                <div class="panel panel-default"><!-- panel -->
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#rate-user-2">
+                        <span class="color-primary">Premjeet Sharan</span><br>
+                        <span>premjeet@poolcircle.com</span>
+                      </a>
+                    </h4>
+                  </div><!-- /panel -->
+                  <div id="rate-user-2" class="panel-collapse collapse"><!-- panel-collapse -->
+                    <div class="panel-body"><!-- panel-body -->
+                      <table>
+                        <tr>
+                          <td>
+                            <div class="photo-container"><!-- photo-container -->
+                              <i class="fa fa-user"></i>
+                            </div><!-- /photo-container -->
+                          </td>
+                          <td>
+                            <div class="rate-a-user"><!-- rate-a-user -->
+                              <input type="number" name="rating" data-min="1" data-max="5" class="rating rating-thumbs" data-icon-lib="fa" data-active-icon="fa-thumbs-up" data-inactive-icon="fa-thumbs-o-up" /><br>
+                               <button class="btn btn-default btn-xs" type="button">Rate</button>
+                            </div><!-- .rate-a-user -->
+                          </td>
+                        </tr>
+                      </table>
+                    </div><!-- /panel-body -->
+                  </div><!-- /panel-collapse -->
+                </div><!-- /panel -->
+                <div class="panel panel-default"><!-- panel -->
+                  <div class="panel-heading"><!-- panel-heading -->
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#rate-user-3">
+                        <span class="color-primary">Raghu Ramanujam</span><br>
+                        <span>raghu@poolcircle.com</span>
+                      </a>
+                    </h4>
+                  </div><!-- panel-heading -->
+                  <div id="rate-user-3" class="panel-collapse collapse"><!-- panel-collapse -->
+                    <div class="panel-body"><!-- panel-body -->
+                      <table>
+                        <tr>
+                          <td>
+                            <div class="photo-container"><!-- photo-container -->
+                              <i class="fa fa-user"></i>
+                            </div><!-- /photo-container -->
+                          </td>
+                          <td>
+                            <div class="rate-a-user"><!-- rate-a-user -->
+                              <input type="number" name="rating" data-min="1" data-max="5" class="rating rating-thumbs" data-icon-lib="fa" data-active-icon="fa-thumbs-up" data-inactive-icon="fa-thumbs-o-up" /><br>
+                               <button class="btn btn-default btn-xs" type="button">Rate</button>
+                            </div><!-- .rate-a-user -->
+                          </td>
+                        </tr>
+                      </table>
+                    </div><!-- /panel-body -->
+                  </div><!-- /panel-collapse -->
+                </div><!-- /panel -->
+              </div><!-- /panel-group -->
+
+            </div><!-- /scroll-box -->
+          </div><!-- /div1 -->
+        </div><!-- /row -->
+      </div><!-- /modal-body -->
+    </div><!-- /modal-content -->
+  </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- ......................./modal for rate a user....................... -->
+
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap/bootstrap-rating-input.js" type="text/javascript"></script> 
+  <script src="js/techie/jquery.slimscroll.min.js" type="text/javascript"></script>
+  <script src="js/spinner/spin.min.js" type="text/javascript"></script>
+  <script src="js/spinner/ladda.min.js" type="text/javascript"></script>
+  <script src="js/pages/community/custom.js" type="text/javascript"></script>   
+  <script src="js/techie/custom.js" type="text/javascript"></script>
+  </body>
+</html>

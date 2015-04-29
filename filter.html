@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>PoolCircle</title>
+    <link rel="icon" type="image/ico" href="img/techie/favicon.ico">
+
+    <!-- Styles -->
+    <link href="css/techie/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/pages/filter/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animation/animate.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  <div class='navbar navbar-inverse navbar-static-top' role='navigation' style='background-color: #476172; border-bottom: 3px solid #55d782; border-radius: 0; margin:0;'><!-- navbar -->
+    <div class='container'><!-- container -->
+      <div class='navbar-header'><!-- navbar-header -->
+        <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button' style='background-color: #476172'>
+          <span class='sr-only'>Toggle navigation</span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <a class='navbar-brand' href='index.html'><img src="img/techie/logo-icon.png" alt="PoolCircle Logo" style="width: 40px; margin-top: 15px"></a>
+      </div><!-- /navbar-header -->
+      <div class='collapse navbar-collapse' style='background-color: #476172'><!-- collapse -->
+        <div class="appear" style="padding: 5px 0"></div>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a href='about.html' style="color: #fff"><i class="fa fa-user"></i> About</a></li>
+          <li><a href='faq.html' style="color: #fff"><i class="fa fa-question-circle"></i> FAQ</a></li>
+          <li><a href='#' style="color: #fff"><i class="fa fa-wordpress"></i> Blog</a></li>
+          <li><a href='contact.html' style="color: #fff"><i class="fa fa-envelope"></i> Contact</a></li>
+        </ul>
+      </div><!-- /collapse -->
+    </div><!-- /container -->
+  </div><!-- /navbar -->
+
+  <div class="container-fluid map-bg filter-page"><!-- container-fluid -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="btn-group pull-right" style="margin: 20px 0; display: none"><!-- btn-group -->
+            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".registerModal"><i class="fa fa-plus-circle"></i> Register</button>
+            <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target=".loginModal">Login <i class="fa fa-sign-in"></i></button>
+          </div><!-- /btn-group -->
+          <div class="btn-group pull-right" style="margin: 20px 0; display: block"><!-- btn-group -->
+            <table>
+              <tr>
+                <td class="color-white"><em>Login back</em>&nbsp;&nbsp;</td>
+                <td><a href="" class="btn btn-info btn-md"><i class="fa fa-dashboard"></i> Dashboard</a></td>
+              </tr>
+            </table>
+          </div><!-- /btn-group -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-md-3 filter-box" style="padding: 0"><!-- col-md-3 filter-box -->
+          <nav class="navbar navbar-invert" role="navigation">
+            <div class="navbar-header"><!-- navbar-header -->
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border: 1px solid grey">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars fa-lg"></i>
+              </button>
+              <span class="navbar-brand color-famgreen" style="font-size: 20px"><i class="fa fa-filter"></i> Filter</span>
+            </div><!-- /navbar-header -->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="max-height: none"><!-- navbar-collapse -->
+              <div class="disappear" style="padding: 20px 0"></div>
+              <div><!-- div1 -->
+                <h4><i class="fa fa-male fa-fw"></i> Role</h4>
+                <div class="checkbox"><!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="show" value="option1" checked>
+                    Looking for Carpool
+                  </label>
+                </div><!-- /checkbox -->
+                <div class="checkbox"><!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="show" value="option2" checked>
+                    Offering Carpool
+                  </label>
+                </div><!-- /checkbox -->
+                <hr class="hr-color-grey" />
+              </div><!-- /div1 -->
+
+              <div><!-- div2 -->
+                <h4><i class="fa fa-clock-o fa-fw"></i> Time</h4>
+                <div class="radio"><!-- radio -->
+                  <label>
+                    <input type="radio" name="timedate" value="option1">
+                    Today
+                  </label>
+                </div><!-- /radio -->
+                <div class="radio"><!-- radio -->
+                  <label>
+                    <input type="radio" name="timedate" value="option2">
+                    Tomorrow
+                  </label>
+                </div><!-- /radio -->
+                <div class="radio"><!-- radio -->
+                  <label>
+                    <input type="radio" name="timedate" value="option3">
+                    Next 7 Days
+                  </label>
+                </div><!-- /radio -->
+                <div class="radio"><!-- radio -->
+                  <label>
+                    <input type="radio" name="timedate" value="option4">
+                    Next 30 Days
+                  </label>
+                </div><!-- /radio -->
+                <div class="radio"><!-- radio -->
+                  <label>
+                    <input type="radio" name="timedate" value="option5" checked>
+                    All
+                  </label>
+                </div><!-- /radio -->
+                <hr class="hr-color-grey" />
+              </div><!-- /div2 -->
+
+              <div><!-- div3 -->
+                <h4><i class="fa fa-photo fa-fw"></i> Photo</h4>
+                <div class="radio"><!-- radio -->
+                  <label>
+                    <input type="radio" name="photo" value="option1">
+                    With photo
+                  </label>
+                </div><!-- /radio -->
+                <div class="radio"><!-- radio -->
+                  <label>
+                    <input type="radio" name="photo" value="option2" checked>
+                    All
+                  </label>
+                </div><!-- /radio -->
+                <hr class="hr-color-grey" />
+              </div><!-- div3 -->
+
+              <div><!-- div4 -->
+                <h4><i class="fa fa-star-half-o fa-fw"></i> Rating</h4>
+                <div class="checkbox"><!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="rating" value="5 Star">
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                  </label>
+                </div><!-- /checkbox -->
+                <div class="checkbox"><!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="rating" value="4 Star">
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                  </label>
+                </div><!-- /checkbox -->
+                <div class="checkbox"><!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="rating" value="3 Star">
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                  </label>
+                </div><!-- /checkbox -->
+                <div class="checkbox"><!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="rating" value="2 Star">
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                  </label>
+                </div><!-- /checkbox -->
+                <div class="checkbox"><!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="rating" value="1 Star">
+                    <i class="fa fa-star rating-green"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                    <i class="fa fa-star rating-grey"></i>
+                  </label>
+                </div><!-- /checkbox -->
+              </div><!-- /div4 -->
+            </div><!-- /navbar-collapse -->
+          </nav>
+        </div><!-- /col-md-3 /filter-box -->
+
+        <div class="col-md-9 main-box"><!-- col-md-9 main-box -->
+          <div class="row inner-box box box-info"><!-- row inner-box -->
+            <div class="col-md-12" style="display: block"><!-- col-md-12 -->
+              <span>Find Carpools</span><br>
+              <div class="row"><!-- row -->
+                <div class="col-md-5 col-sm-5"><!-- col-md-5 col-sm-5 -->
+                  <div class="input-group margin-bottom-sm"><!-- input-group -->
+                    <span class="input-group-addon"><i class="fa fa-map-marker fa-lg color-darkgreen"></i></span>
+                    <input class="form-control" type="text" placeholder="Source">
+                  </div><!-- /input-group -->
+                </div><!-- /col-md-5 /col-sm-5 -->
+                <div class="col-md-5 col-sm-5"><!-- col-md-5 col-sm-5 -->
+                  <div class="input-group margin-bottom-sm"><!-- input-group -->
+                    <span class="input-group-addon"><i class="fa fa-map-marker fa-lg color-darkred"></i></span>
+                    <input class="form-control" type="text" placeholder="Destination">
+                  </div><!-- /input-group -->
+                </div><!-- /col-md-5 /col-sm-5 -->
+                <div class="col-md-2 col-sm-2"><!-- col-md-5 col-sm-5 -->
+                  <button type="button" class="btn btn-primary btn-block"><i class="fa fa-search fa-1x"></i> Find</button>
+                </div><!-- /col-md-5 /col-sm-5 -->
+              </div><!-- /row -->
+            </div><!-- /col-md-12 -->
+
+            <div class="col-md-12" style="display: none"><!-- col-md-12 -->
+              <div class="row"><!-- row -->
+                <div class="col-md-11 col-sm-11 col-xs-11"><!-- col-md-11 col-sm-11 -->
+                  <i class="fa fa-map-marker fa-lg color-darkgreen"></i> <span>Marathahalli-Sarjapur Outer Ring Road, Chandra Layout, Bangalore, Karnataka, India</span>
+                </div><!-- /col-md-10 /col-sm-10 -->
+                <div class="col-md-11 col-sm-11 col-xs-11"><!-- col-md-11 col-sm-11 -->
+                  <i class="fa fa-map-marker fa-lg color-darkred"></i> <span>Malleswaram 18th Cross Bus Station, 18th Cross Road, Malleshwara, Bangalore, Karnataka, Indiasssss</span>
+                </div><!-- /col-md-10 /col-sm-10 -->
+                <div class="col-md-1 col-sm-1 col-xs-1"><!-- col-md-1 col-sm-1 -->
+                  <button type="button" class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Modify"><i class="fa fa-pencil-square-o fa-lg"></i></button>
+                </div><!-- /col-md-1 /col-sm-1 -->
+              </div><!-- /row -->
+            </div><!-- /col-md-12 -->
+          </div><!-- /row /inner-box -->
+
+          <div class="row inner-box box"><!-- row inner-box -->
+            <div class="col-md-12"><!-- col-md-12 -->
+              <span style="font-size: 18px">2 Carpool(s) Available</span>
+              <span style="float: right"><button class="btn btn-default btn-xs tooltiptop" data-toggle="tooltip" title="Refresh" onClick="window.location.reload()" style="background-color: #bbb"><i class="fa fa-refresh fa-lg"></i></button></span>
+            </div><!-- /col-md-12 -->
+          </div><!-- /row /inner-box -->
+
+          <div class="row inner-box box box-primary animation"><!-- row inner-box -->
+            <div class="box-header"><!-- box-header -->
+              <span class="box-title">
+                <div class="row"><!-- row -->
+                  <div class="col-md-6 col-sm-6 col-xs-6 r-c1"><!-- r-c1 -->
+                    Looking for Carpool
+                  </div><!-- /r-c1 -->
+                  <div class="col-md-6 col-sm-6 col-xs-6 r-c2"><!-- r-c2 -->
+                    <span>Today</span><br>
+                    <span style="font-size: 20px">1.25 PM</span>
+                  </div><!-- /r-c2 -->
+                </div><!-- /row -->
+              </span>
+              <div class="box-tools pull-right"><!-- box-tools -->
+                <button class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Collapse" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                <button class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Remove" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div><!-- /box-tools -->
+            </div><!-- /box-header -->
+            <div class="box-body collapse"><!-- box-body -->
+              <div class="col-md-7 col-sm-7 col-xs-12 col-sm-push-5 right-box"><!-- right-box -->                
+                <div class="row" style="padding-bottom: 5px"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <i class="fa fa-map-marker fa-lg color-darkgreen"></i> <span>Marathahalli-Sarjapur Outer Ring Road, Chandra Layout, Bangalore, Karnataka, India</span>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+                <div class="row"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <i class="fa fa-map-marker fa-lg color-darkred"></i> <span>Malleswaram 18th Cross Bus Station, 18th Cross Road, Malleshwara, Bangalore, Karnataka, India</span>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+                <div class="row" style="padding-top: 10px"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <i class="fa fa-car"></i> <span>Ford, TN 40 BA 5555</span>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+                <div class="row" style="padding-top: 10px"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <label class="color-warning">Setup Carpool</label><br />
+                    <button class="btn btn-primary btn-md" id="show-number"><i class="fa fa-phone"></i> Show number</button>
+                    <button class="btn btn-primary btn-md" id="hide-number" data-toggle="modal" data-target=".callModal" style="display: none"><i class="fa fa-phone"></i> 9876543210 <a class="btn btn-danger btn-xs">call</a></button>
+                    <button class="btn btn-success btn-md" data-toggle="modal" data-target=".messageModal" style="margin: 5px 0"><i class="fa fa-envelope"></i> Message</button>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+              </div><!-- /right-box -->
+
+              <div class="col-md-5 col-sm-5 col-xs-12 col-sm-pull-7 left-box"><!-- left-box -->
+                <div class="row" style="padding-bottom: 10px"><!-- row -->
+                  <div class="col-md-12 col-sm-12 col-xs-12"><!-- col-md-12 col-sm-12 col-xs-12 -->
+                    <table style="margin-bottom: 5px">
+                      <tr>
+                        <td style="padding: 0 5px">
+                          <div class="photo-container"><!-- photo-container -->
+                            <i class="fa fa-user"></i>
+                          </div><!-- /photo-container -->
+                        </td>
+                        <td style="padding: 0 5px; vertical-align: top">
+                          <div class="name">Vivin Antony <i class="fa fa-male color-male tooltiptop" data-toggle="tooltip" title="Male"></i></div>
+                          <table>
+                            <tr>
+                              <td rowspan="2" style="padding-right: 5px"><div class="circle">236</div></td>
+                              <td>Trust Points</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-grey"></i>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </div><!-- /col-md-12 /col-sm-12 /col-xs-12 -->
+                  <div class="col-md-12 col-sm-12 col-xs-12"><!-- col-md-12 col-sm-12 col-xs-12 -->
+                    <div><!-- div1 -->
+                      <i class="fa fa-facebook-square fa-lg color-facebook"></i> <span>163 Friends</span>
+                    </div><!-- /div1 -->
+                    <div><!-- div2 -->
+                      <i class="fa fa-linkedin-square fa-lg color-linkedin"></i> <span>163 Connections</span>
+                    </div><!-- /div2 -->
+                    <div><!-- div3 -->
+                      <span><strong>Peer Rating:</strong> 3.4 / 5.0 (23 Received)</span>
+                    </div><!-- /div3 -->
+                    <div><!-- div4 -->
+                      <span><strong>Member since:</strong> 23 Jan 2014</span>
+                    </div><!-- /div4 -->
+                  </div><!-- /col-md-12 /col-sm-12 /col-xs-12 -->
+                </div><!-- /row -->
+              </div><!-- /left-box -->  
+            </div><!-- /box-body -->         
+          </div><!-- /row /inner-box -->
+
+          <div class="row inner-box box box-primary animation"><!-- row inner-box -->
+            <div class="box-header"><!-- box-header -->
+              <span class="box-title">
+                <div class="row"><!-- row -->
+                  <div class="col-md-4 col-sm-4 col-xs-12 r-c1"><!-- r-c1 -->
+                    Offering Carpool
+                  </div><!-- /r-c1 -->
+                  <div class="col-md-4 col-sm-4 col-xs-6 r-c2"><!-- r-c2 -->
+                    <span>Today</span><br>
+                    <span style="font-size: 20px">5.65 PM</span>
+                  </div><!-- /r-c2 -->
+                  <div class="col-md-4 col-sm-4 col-xs-6 r-c3"><!-- r-c3 -->
+                    <span><i class="fa fa-inr"></i> <span style="font-size: 20px">6</span> / Km</span><br>
+                    <span>Fuel Share</span>
+                  </div><!-- /r-c3 -->
+                </div><!-- /row -->
+              </span>
+              <div class="box-tools pull-right"><!-- box-tools -->
+                <button class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Collapse" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                <button class="btn btn-primary btn-xs tooltiptop" data-toggle="tooltip" title="Remove" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div><!-- /box-tools -->
+            </div><!-- /box-header -->
+            <div class="box-body collapse"><!-- box-body -->
+              <div class="col-md-7 col-sm-7 col-xs-12 col-sm-push-5 right-box"><!-- right-box -->                
+                <div class="row" style="padding-bottom: 5px"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <i class="fa fa-map-marker fa-lg color-darkgreen"></i> <span>Marathahalli-Sarjapur Outer Ring Road, Chandra Layout, Bangalore, Karnataka, India</span>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+                <div class="row"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <i class="fa fa-map-marker fa-lg color-darkred"></i> <span>Malleswaram 18th Cross Bus Station, 18th Cross Road, Malleshwara, Bangalore, Karnataka, India</span>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+                <div class="row" style="padding-top: 10px"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <i class="fa fa-car"></i> <span>Ford, TN 40 BA 5555</span>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+                <div class="row" style="padding-top: 10px"><!-- row -->
+                  <div class="col-md-12"><!-- col-md-12 -->
+                    <label class="color-warning">Setup Carpool</label><br />
+                    <button class="btn btn-primary btn-md" id="show-number"><i class="fa fa-phone"></i> Show number</button>
+                    <button class="btn btn-primary btn-md" id="hide-number" data-toggle="modal" data-target=".callModal" style="display: none"><i class="fa fa-phone"></i> 9876543210 <a class="btn btn-danger btn-xs">call</a></button>
+                    <button class="btn btn-success btn-md" data-toggle="modal" data-target=".messageModal" style="margin: 5px 0"><i class="fa fa-envelope"></i> Message</button>
+                  </div><!-- /col-md-12 -->
+                </div><!-- /row -->
+              </div><!-- /right-box -->
+
+              <div class="col-md-5 col-sm-5 col-xs-12 col-sm-pull-7 left-box"><!-- left-box -->
+                <div class="row" style="padding-bottom: 10px"><!-- row -->
+                  <div class="col-md-12 col-sm-12 col-xs-12"><!-- col-md-12 col-sm-12 col-xs-12 -->
+                    <table style="margin-bottom: 5px">
+                      <tr>
+                        <td style="padding: 0 5px">
+                          <div class="photo-container"><!-- photo-container -->
+                            <i class="fa fa-user"></i>
+                          </div><!-- /photo-container -->
+                        </td>
+                        <td style="padding: 0 5px; vertical-align: top">
+                          <div class="name">Blessina Nissi <i class="fa fa-female color-female tooltiptop" data-toggle="tooltip" title="Female"></i></div>
+                          <table>
+                            <tr>
+                              <td rowspan="2" style="padding-right: 5px"><div class="circle">236</div></td>
+                              <td>Trust Points</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-green"></i>
+                                <i class="fa fa-star rating-grey"></i>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </div><!-- /col-md-12 /col-sm-12 /col-xs-12 -->
+                  <div class="col-md-12 col-sm-12 col-xs-12"><!-- col-md-12 col-sm-12 col-xs-12 -->
+                    <div><!-- div1 -->
+                      <i class="fa fa-facebook-square fa-lg color-facebook"></i> <span>163 Friends</span>
+                    </div><!-- /div1 -->
+                    <div><!-- div2 -->
+                      <i class="fa fa-linkedin-square fa-lg color-linkedin"></i> <span>163 Connections</span>
+                    </div><!-- /div2 -->
+                    <div><!-- div3 -->
+                      <span><strong>Peer Rating:</strong> 3.4 / 5.0 (23 Received)</span>
+                    </div><!-- /div3 -->
+                    <div><!-- div4 -->
+                      <span><strong>Member since:</strong> 23 Jan 2014</span>
+                    </div><!-- /div4 -->
+                  </div><!-- /col-md-12 /col-sm-12 /col-xs-12 -->
+                </div><!-- /row -->
+              </div><!-- /left-box -->  
+            </div><!-- /box-body -->         
+          </div><!-- /row /inner-box -->
+
+          <div class="row" style="padding: 10px">
+            <div class="col-md-12">
+              <em>Start carpooling in a jiffy</em> <a href="#" data-toggle="modal" data-target=".registerModal">Register</a> <em>or</em> <a href="#" data-toggle="modal" data-target=".loginModal">Login</a>
+            </div>
+          </div>
+        </div><!-- /col-md-9 /main-box -->        
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div><!-- /container-fluid -->
+
+  <i class="fa fa-chevron-circle-up fa-2x scrollup tooltiptop" data-toggle="tooltip" title="Scroll to top"></i>
+
+  <div style="clear: both"></div>
+
+  <footer>
+    <div class="container"><!-- container -->
+      <div class="row"><!-- row -->
+        <div class="col-lg-9 col-md-9 col-sm-7"><!-- col-md-9 -->
+          <table style="width: auto; margin: 8px auto">
+            <tr>
+              <td style="color: #eee"><i class="fa fa-copyright"></i> PoolCircle 2014</td>
+              <td><a href='tou.html'>Terms of Use</a></td>
+              <td><a href='privacy.html'>Privacy Policy</a></td>
+            </tr>
+          </table>
+        </div><!-- /col-md-9 -->
+        <div class="col-lg-3 col-md-3 col-sm-5"><!-- col-md-3 -->
+          <div class="appear" style="padding: 5px 0"></div>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Facebook">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-facebook fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Twitter">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-twitter fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+          <a href="#" target="_blank">
+            <span class="fa-stack fa-lg tooltiptop" data-toggle="tooltip" title="Linkedin">
+              <i class="fa fa-circle fa-stack-2x color-famgreen"></i>
+              <i class="fa fa-linkedin fa-stack-1x color-famblue"></i>
+            </span>
+          </a>
+        </div><!-- /col-md-3 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </footer>
+
+  <!-- .......................modal for message....................... -->
+  <div class="modal fade messageModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+    <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+      <div class="modal-content"><!-- modal-content -->
+        <div class="modal-header"><!-- modal-header -->
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Message</h4>
+        </div><!-- /modal-header -->
+        <div class="modal-body"><!-- modal-body -->
+          <div class="row"><!-- row -->
+            <div style="width:80%; margin:0 auto"><!-- div1 -->
+              <p>To <strong>Vivin Antony</strong>,<br />Hey, I'm going the same way too. Call <strong>9876543210</strong> to carpool.</p>
+              <button class="btn btn-success btn-sm btn-block"><i class="fa fa-check"></i> Send</button>
+              <div style="padding:10px"></div>
+            </div><!-- /div1 -->
+          </div><!-- /row -->
+        </div><!-- /modal-body -->
+      </div><!-- /modal-content -->
+    </div><!-- /modal-dialog -->
+  </div><!-- /modal -->
+  <!-- ......................./modal for message....................... -->
+
+  <!-- .......................modal for call....................... -->
+  <div class="modal fade callModal" tabindex="-1" role="dialog" aria-hidden="true"><!-- modal -->
+    <div class="modal-dialog modal-sm"><!-- modal-dialog -->
+      <div class="modal-content"><!-- modal-content -->
+        <div class="modal-header"><!-- modal-header -->
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Call</h4>
+        </div><!-- /modal-header -->
+        <div class="modal-body"><!-- modal-body -->
+          <div class="row"><!-- row -->
+            <div style="width:80%; margin:0 auto"><!-- div1 -->
+              <p>Are you sure you want to call <strong>Vivin Antony</strong>?</p>
+              <p><em><strong>Note:</strong> Works if your in mobile only. If your in web, dial the shown number on your mobile.</em></p>
+              <button class="btn btn-primary btn-sm"><i class="fa fa-phone"></i> Call</button>
+              <button class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <div style="padding:5px"></div>
+            </div><!-- /div1 -->
+          </div><!-- /row -->
+        </div><!-- /modal-body -->
+      </div><!-- /modal-content -->
+    </div><!-- /modal-dialog -->
+  </div><!-- /modal -->
+  <!-- ......................./modal for call....................... -->
+
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/techie/viewportchecker.js" type="text/javascript"></script>
+  <script src="js/pages/filter/custom.js" type="text/javascript"></script>
+  <script src="js/techie/custom.js" type="text/javascript"></script>
+  </body>
+</html>
